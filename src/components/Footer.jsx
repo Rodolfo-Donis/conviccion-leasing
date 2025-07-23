@@ -15,10 +15,10 @@ const Footer = () => {
         <div className="footer-main-row">
           <div className="footer-links-block">
             <ul className="footer-main-links">
-              <li><b>• Inicio</b></li>
-              <li><b>• Cómo funciona</b></li>
-              <li><b>• Servicios</b></li>
-              <li><b>• Contáctanos</b></li>
+              <li>• Inicio</li>
+              <li>• Cómo funciona</li>
+              <li>• Servicios</li>
+              <li>• Contáctanos</li>
             </ul>
           </div>
           <div className="footer-contact-block">
@@ -47,7 +47,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} conviccion Leasing. All rights reserved.</p>
+            <p>&copy; {currentYear} Convicción Leasing. All rights reserved.</p>
             <motion.button
               className="scroll-to-top"
               onClick={scrollToTop}

@@ -1,0 +1,558 @@
+/* Inicio Component Styles - Following Design System */
+
+/* Import Open Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/* Design System Variables */
+:root {
+  --font-family-primary: 'Open Sans', sans-serif;
+  --color-dark-blue: #1b3865;
+  --color-sky-blue: #64c5e1;
+  --color-yellow: #f2a43b;
+  --color-dark-gray: #444444;
+  --color-white: #ffffff;
+  --color-light-gray: #f8f9fa;
+  --color-border: #e9ecef;
+  
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-radius-2xl: 1.5rem;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* Base Styles */
+.inicio {
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Hero Banner */
+.hero-banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, 
+    var(--color-dark-blue) 0%, 
+    var(--color-sky-blue) 50%, 
+    var(--color-yellow) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  color: var(--color-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease-out;
+}
+
+.hero-banner.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(27, 56, 101, 0.7) 0%, 
+    rgba(100, 197, 225, 0.6) 50%, 
+    rgba(242, 164, 59, 0.5) 100%);
+  z-index: 1;
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 80%);
+  animation: backgroundFloat 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.hero-title {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-2xl);
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Button */
+.cta-button {
+  background: var(--color-yellow);
+  color: var(--color-dark-blue);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.cta-button:hover {
+  background: #e5942a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Social Media Buttons */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-sky-blue);
+  color: var(--color-white);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.social-button:hover {
+  background: #5ab8d1;
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.social-button.linkedin:hover {
+  background: #0077b5;
+}
+
+.social-button.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Section Styles - Updated with Design System Colors and Modern Animations */
+.quienes-somos,
+.mision,
+.vision,
+.valores {
+  padding: var(--spacing-3xl) 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.quienes-somos.scroll-animate,
+.mision.scroll-animate,
+.vision.scroll-animate,
+.valores.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background decoration for sections */
+.quienes-somos::before,
+.mision::before,
+.vision::before,
+.valores::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(27, 56, 101, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 1.5s ease-out 0.5s;
+  z-index: 0;
+}
+
+.quienes-somos.scroll-animate::before,
+.mision.scroll-animate::before,
+.vision.scroll-animate::before,
+.valores.scroll-animate::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.quienes-somos {
+  background: #f8f9fa;
+}
+
+.mision {
+  background: var(--color-white);
+}
+
+.vision {
+  background: #f8f9fa;
+}
+
+.valores {
+  background: var(--color-white);
+}
+
+.section-title {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  color: var(--color-dark-blue);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.section-text {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  color: var(--color-dark-gray);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Valores Grid - Enhanced Animations */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.valor-card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 200px;
+  position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform var(--transition-slow);
+  transform-style: preserve-3d;
+}
+
+.valor-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.card-front {
+  background: linear-gradient(135deg, var(--color-dark-blue), var(--color-sky-blue));
+  color: var(--color-white);
+}
+
+.card-back {
+  background: linear-gradient(135deg, var(--color-yellow), #e5942a);
+  color: var(--color-dark-blue);
+  transform: rotateY(180deg);
+}
+
+.valor-letter {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+}
+
+.valor-meaning {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-dark-blue);
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+/* Enhanced hover effects for cards */
+.valor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left var(--transition-slow);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.valor-card:hover::before {
+  left: 100%;
+}
+
+/* Section-specific animations */
+.quienes-somos .container,
+.mision .container,
+.vision .container,
+.valores .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Staggered animation for section elements */
+.quienes-somos .section-title,
+.mision .section-title,
+.vision .section-title,
+.valores .section-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.quienes-somos.scroll-animate .section-title,
+.mision.scroll-animate .section-title,
+.vision.scroll-animate .section-title,
+.valores.scroll-animate .section-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quienes-somos .section-text,
+.mision .section-text,
+.vision .section-text,
+.valores .section-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.quienes-somos.scroll-animate .section-text,
+.mision.scroll-animate .section-text,
+.vision.scroll-animate .section-text,
+.valores.scroll-animate .section-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .valores-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .cta-button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-base);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-text {
+    font-size: var(--font-size-base);
+  }
+  
+  .valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .valor-card {
+    height: 180px;
+  }
+  
+  .valor-letter {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .valor-meaning {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .section-text {
+    font-size: var(--font-size-sm);
+  }
+  
+  .valores-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .valor-card {
+    height: 150px;
+  }
+  
+  .valor-letter {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .valor-meaning {
+    font-size: var(--font-size-base);
+  }
+  
+  .social-button {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-base);
+  }
+} 

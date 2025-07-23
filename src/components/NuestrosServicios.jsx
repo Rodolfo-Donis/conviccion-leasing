@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import { COMPANY_INFO } from '../assets/utils/constants'
 import './NuestrosServicios.css'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+
+  // Individual scroll triggers for each section
+  const [equipmentRef, equipmentInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  })
+
+  const [sectorsRef, sectorsInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  })
+
+  const [benefitsRef, benefitsInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  })
+
+  const [ctaRef, ctaInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  })
 
   const handleWhatsAppClick = () => {
     const whatsappUrl = COMPANY_INFO.whatsapp
@@ -26,24 +47,6 @@ const NuestrosServicios = () => {
   ]
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    const element = document.getElementById('nuestros-servicios')
-    if (element) {
-      observer.observe(element)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sectors.length)
     }, 3000)
@@ -57,35 +60,6 @@ const NuestrosServicios = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + sectors.length) % sectors.length)
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  }
-
-  const iconVariants = {
-    hover: {
-      scale: 1.1,
-      rotate: 5,
-      transition: { duration: 0.3 }
-    }
   }
 
   const carouselVariants = {
@@ -107,33 +81,33 @@ const NuestrosServicios = () => {
 
   return (
     <section id="nuestros-servicios" className="nuestros-servicios">
-      <motion.div
-        className="container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
-      >
-        {/* First Section - Equipment */}
-        <motion.div className="equipment-section" variants={itemVariants}>
+      <div className="container">
+        {/* Equipment Section */}
+        <div className={`equipment-section ${equipmentInView ? 'scroll-animate' : ''}`} ref={equipmentRef}>
           <motion.div className="section-content">
             <motion.h2 
               className="section-title"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               ¿Qué equipos utilizas en tu negocio?
             </motion.h2>
             <motion.p 
               className="section-description"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Te ayudamos a crecer con los activos productivos que tu empresa requiera.
             </motion.p>
             
-            <motion.div className="equipment-grid">
+            <motion.div 
+              className="equipment-grid"
+              initial={{ opacity: 0, y: 30 }}
+              animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               {[
                 { icon: '🚜', label: 'Agricultura' },
                 { icon: '🏗️', label: 'Construcción' },
@@ -145,11 +119,20 @@ const NuestrosServicios = () => {
                 <motion.div
                   key={index}
                   className="equipment-item"
-                  variants={iconVariants}
-                  whileHover="hover"
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  animate={equipmentInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 0.8 + index * 0.1,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -5,
+                    transition: { duration: 0.3 }
+                  }}
                 >
                   <div className="equipment-icon">{item.icon}</div>
                   <span className="equipment-label">{item.label}</span>
@@ -157,20 +140,25 @@ const NuestrosServicios = () => {
               ))}
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
 
-        {/* Second Section - Economic Sectors Carousel */}
-        <motion.div className="sectors-section" variants={itemVariants}>
+        {/* Sectors Section */}
+        <div className={`sectors-section ${sectorsInView ? 'scroll-animate' : ''}`} ref={sectorsRef}>
           <motion.h2 
             className="section-title"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={sectorsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             ¿A qué sectores económicos servimos?
           </motion.h2>
           
-          <motion.div className="carousel-container">
+          <motion.div 
+            className="carousel-container"
+            initial={{ opacity: 0, y: 30 }}
+            animate={sectorsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <motion.button
               className="carousel-btn prev"
               onClick={prevSlide}
@@ -218,7 +206,12 @@ const NuestrosServicios = () => {
             </motion.button>
           </motion.div>
           
-          <div className="carousel-indicators">
+          <motion.div 
+            className="carousel-indicators"
+            initial={{ opacity: 0, y: 20 }}
+            animate={sectorsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             {sectors.map((_, index) => (
               <motion.button
                 key={index}
@@ -228,34 +221,39 @@ const NuestrosServicios = () => {
                 whileTap={{ scale: 0.8 }}
               />
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* Third Section - Benefits */}
-        <motion.div className="benefits-section" variants={itemVariants}>
+        {/* Benefits Section */}
+        <div className={`benefits-section ${benefitsInView ? 'scroll-animate' : ''}`} ref={benefitsRef}>
           <motion.h2 
             className="section-title"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             ¿Por qué adquirir activos productivos con Convicción Leasing?
           </motion.h2>
           <motion.p 
             className="section-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             Beneficios que impactan tu productividad, operación y rentabilidad.
           </motion.p>
           
-          <motion.div className="benefits-pyramid">
+          <motion.div 
+            className="benefits-pyramid"
+            initial={{ opacity: 0, y: 30 }}
+            animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             <motion.div 
               className="pyramid-level main-benefit"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              animate={benefitsInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               <h3>INCREMENTA CAPACIDAD PRODUCTIVA DE TU EMPRESA</h3>
             </motion.div>
@@ -263,8 +261,8 @@ const NuestrosServicios = () => {
             <motion.div 
               className="pyramid-level secondary-benefits"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
               <div className="benefit-item">
                 <h4>DISMINUYE COSTO DE OPORTUNIDAD SOBRE EL CAPITAL DE TRABAJO</h4>
@@ -280,8 +278,8 @@ const NuestrosServicios = () => {
             <motion.div 
               className="pyramid-level tertiary-benefits"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
+              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
               <div className="benefit-item">
                 <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
@@ -294,8 +292,8 @@ const NuestrosServicios = () => {
             <motion.div 
               className="pyramid-level quaternary-benefits"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
+              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.4 }}
             >
               <div className="benefit-item">
                 <h4>MÁS EQUIPO POR EL MISMO PRESUPUESTO</h4>
@@ -308,25 +306,23 @@ const NuestrosServicios = () => {
               </div>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Call to Action */}
-        <motion.div 
-          className="cta-section"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
-        >
+        <div className={`cta-section ${ctaInView ? 'scroll-animate' : ''}`} ref={ctaRef}>
           <motion.button
             className="cta-button"
-            whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(255, 165, 0, 0.3)" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(242, 164, 59, 0.3)" }}
             whileTap={{ scale: 0.95 }}
             onClick={handleWhatsAppClick}
           >
             Cotiza tu equipo hoy mismo
           </motion.button>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
