@@ -1,0 +1,490 @@
+/* Contact Section - Optimized Modern Design */
+
+.contact {
+  position: relative;
+  background: var(--background-white);
+}
+
+/* Hero Section */
+.contact-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(27, 56, 101, 0.8), rgba(27, 56, 101, 0.8)), 
+              url('/src/assets/images/mesaTrabajo2.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--text-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(27, 56, 101, 0.9), rgba(100, 197, 225, 0.3));
+  z-index: 1;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+.contact-hero-content h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contact-hero-content p {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: var(--background-white);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+}
+
+.contact-form-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--background-white));
+}
+
+.contact-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--background-white);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-3xl);
+  position: relative;
+  z-index: 10;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  background: rgba(100, 197, 225, 0.1);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  font-family: var(--font-family-primary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(100, 197, 225, 0.15);
+  box-shadow: 0 0 0 3px rgba(242, 164, 59, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--font-family-primary);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: var(--accent-color);
+  color: var(--text-white);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-family-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-normal);
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: var(--font-size-lg);
+  transition: transform var(--transition-fast);
+}
+
+.submit-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--text-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.success-message,
+.error-message {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-md);
+  font-weight: 500;
+  text-align: center;
+}
+
+.success-message {
+  background: rgba(16, 185, 129, 0.1);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Contact Information Section */
+.contact-info-section {
+  background: var(--background-light);
+  padding: var(--spacing-3xl) 0;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--background-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  border-left: 4px solid var(--accent-color);
+}
+
+.contact-info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-icon {
+  font-size: var(--font-size-2xl);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.contact-info-item p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Map Section */
+.map-section {
+  background: var(--background-white);
+  padding: var(--spacing-3xl) 0;
+}
+
+.map-container {
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+/* Contact Info + Map Side-by-Side Layout */
+.contact-info-map-section {
+  background: var(--background-light);
+  padding: var(--spacing-3xl) 0;
+}
+
+.contact-info-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-3xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.contact-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  justify-content: center;
+}
+
+.contact-info-side .contact-info-item {
+  margin-bottom: 0;
+}
+
+.map-container {
+  min-width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background: var(--background-white);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-hero-content {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  .contact-hero-content h1 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .contact-form-wrapper {
+    margin: 0 var(--spacing-md);
+    padding: var(--spacing-2xl);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+  
+  .contact-info-item {
+    padding: var(--spacing-lg);
+  }
+  
+  .map-container {
+    margin: 0 var(--spacing-md);
+  }
+  
+  .map-container iframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    min-height: 50vh;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .contact-hero-content p {
+    font-size: var(--font-size-md);
+  }
+  
+  .contact-form-wrapper {
+    padding: var(--spacing-lg);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .submit-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-md);
+  }
+  
+  .contact-info-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-info-map-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .map-container {
+    min-width: 0;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-map-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  .contact-info-map-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+  .contact-info-side {
+    gap: var(--spacing-lg);
+  }
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-map-section {
+    padding: var(--spacing-lg) 0;
+  }
+  .contact-info-map-grid {
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  .map-container {
+    height: 220px;
+  }
+}
+
+/* Section Ending Animation */
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
+  opacity: 0;
+  animation: sectionEnd 2s ease-in-out 2s forwards;
+}
+
+@keyframes sectionEnd {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+} 

@@ -1,0 +1,265 @@
+/* Light Theme Colors - New Color Palette */
+:root {
+  --primary-color: #1b3865; /* Dark Blue - Main headers, primary buttons, backgrounds */
+  --primary-dark: #0f2a4a; /* Darker blue for hover states */
+  --primary-light: #2a5a8a; /* Lighter blue for accents */
+  --secondary-color: #64c5e1; /* Sky Blue - Background accents, social media buttons */
+  --accent-color: #f2a43b; /* Yellow - CTA buttons, icons, interactive links */
+  
+  --text-primary: #444444; /* Dark Gray - Body text and general content */
+  --text-secondary: #666666; /* Medium gray for descriptions */
+  --text-light: #888888; /* Light gray for subtle text */
+  --text-white: #ffffff; /* White text on dark backgrounds */
+  
+  --background-light: #f8fafc; /* Light grey/off-white for sections */
+  --background-white: #ffffff; /* Pure white for cards */
+  --background-blue-light: #e8f4f8; /* Light sky blue for sections */
+  --background-blue-gradient: linear-gradient(135deg, #e8f4f8 0%, #d1eaf3 100%);
+  
+  --border-color: #e5e7eb; /* Light grey border */
+  --border-dark: #374151; /* Darker border for dark theme */
+  
+  /* Typography */
+  --font-family-primary: 'Open Sans', sans-serif;
+  --font-family-heading: 'Open Sans', sans-serif;
+  --font-family-body: 'Open Sans', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 5rem;
+  --spacing-5xl: 6rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+  
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  
+  /* Section Padding */
+  --section-padding: 6rem 0;
+  --container-max-width: 1200px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #2a5a8a; /* Lighter dark blue for dark theme */
+  --primary-dark: #1b3865;
+  --primary-light: #3b82f6;
+  --secondary-color: #64c5e1; /* Sky Blue maintained */
+  --accent-color: #f2a43b; /* Yellow maintained */
+  
+  --text-primary: #f9fafb; /* White for main text */
+  --text-secondary: #d1d5db; /* Light grey for descriptions */
+  --text-light: #9ca3af;
+  --text-white: #1f2937; /* Dark text on light backgrounds */
+  
+  --background-light: #1f2937; /* Dark grey for sections */
+  --background-white: #111827; /* Darker background for cards */
+  --background-blue-light: #1e3a8a; /* Darker blue for light blue sections */
+  --background-blue-gradient: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+  
+  --border-color: #374151;
+  
+  /* Dark Theme Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-weight: 400; /* Open Sans Regular */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background-color: var(--background-light);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  transition: color var(--transition-normal);
+}
+
+h1 { 
+  font-size: var(--font-size-5xl); 
+  font-weight: 800; /* Open Sans ExtraBold */
+}
+h2 { 
+  font-size: var(--font-size-4xl); 
+  font-weight: 700; /* Open Sans Bold */
+}
+h3 { 
+  font-size: var(--font-size-3xl); 
+  font-weight: 600; /* Open Sans SemiBold */
+}
+h4 { 
+  font-size: var(--font-size-2xl); 
+  font-weight: 600; /* Open Sans SemiBold */
+}
+h5 { 
+  font-size: var(--font-size-xl); 
+  font-weight: 600; /* Open Sans SemiBold */
+}
+h6 { 
+  font-size: var(--font-size-lg); 
+  font-weight: 600; /* Open Sans SemiBold */
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+  font-weight: 400; /* Open Sans Regular */
+  transition: color var(--transition-normal);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-family-primary);
+  font-weight: 400; /* Open Sans Regular */
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-2xl { margin-bottom: var(--spacing-2xl); }
+.mb-3xl { margin-bottom: var(--spacing-3xl); }
+.mb-4xl { margin-bottom: var(--spacing-4xl); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  font-weight: 600; /* Open Sans SemiBold for buttons */
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--primary-color); /* Dark Blue */
+  color: var(--text-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark); /* Darker Dark Blue */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: var(--accent-color); /* Yellow for CTA buttons */
+  color: var(--text-white);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: #e0942a; /* Darker yellow on hover */
+  border-color: #e0942a;
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 0.9375rem;
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.375rem;
+    --section-padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-5xl: 2rem;
+    --font-size-4xl: 1.75rem;
+    --font-size-3xl: 1.5rem;
+    --section-padding: 3rem 0;
+  }
+} 
