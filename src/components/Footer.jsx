@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-logo-block">
-            <img src="/src/assets/images/LOGO POSITIVO.png" alt="Convicción Leasing" className="footer-logo-img" />
+            <img src="/conviccion-leasing/assets/images/LOGO POSITIVO.png" alt="Convicción Leasing" className="footer-logo-img" />
           </div>
         </div>
         <motion.div

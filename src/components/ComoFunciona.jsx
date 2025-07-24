@@ -183,19 +183,19 @@ const ComoFunciona = () => {
                     <div className="tab-image">
                       {tab.id === 'financiero' ? (
                         <img 
-                          src="/src/assets/images/leasingfinanciero.jpg" 
+                          src="/conviccion-leasing/assets/images/leasingfinanciero.jpg" 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />
                       ) : tab.id === 'operativo' ? (
                         <img 
-                          src="/src/assets/images/leasingoperativo.jpg" 
+                          src="/conviccion-leasing/assets/images/leasingoperativo.jpg" 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />
                       ) : tab.id === 'sale-leaseback' ? (
                         <img 
-                          src="/src/assets/images/leasingsellback.jpg" 
+                          src="/conviccion-leasing/assets/images/leasingsellback.jpg" 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />

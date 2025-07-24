@@ -34,7 +34,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <img src="/src/assets/images/logonegativo.png" alt="Convicción Leasing" />
+          <img src="/conviccion-leasing/assets/images/logonegativo.png" alt="Convicción Leasing" />
           <h2>Convicción Leasing</h2>
         </div>
         

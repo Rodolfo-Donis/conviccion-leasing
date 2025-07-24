@@ -139,7 +139,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/src/assets/images/quienessomos.png" 
+                src="/conviccion-leasing/assets/images/quienessomos.png" 
                 alt="¿Quiénes somos? - Convicción Leasing" 
                 className="quienes-img"
               />
@@ -187,7 +187,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/src/assets/images/missionarrow.jpg" 
+                src="/conviccion-leasing/assets/images/missionarrow.jpg" 
                 alt="Nuestra Misión - Convicción Leasing" 
                 className="mision-img"
               />
@@ -235,7 +235,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/src/assets/images/vision.jpg" 
+                src="/conviccion-leasing/assets/images/vision.jpg" 
                 alt="Nuestra Visión - Convicción Leasing" 
                 className="vision-img"
               />
