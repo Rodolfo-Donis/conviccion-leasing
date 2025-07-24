@@ -49,7 +49,7 @@ const NuestrosServicios = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sectors.length)
-    }, 3000)
+    }, 6000)
 
     return () => clearInterval(interval)
   }, [sectors.length])
@@ -182,6 +182,25 @@ const NuestrosServicios = () => {
                     x: { type: "spring", stiffness: 300, damping: 30 },
                     opacity: { duration: 0.2 }
                   }}
+                  style={{
+                    backgroundImage: sectors[currentSlide] === 'Agricultura' 
+                      ? 'url(/src/assets/images/agriculture.jpg)' 
+                      : sectors[currentSlide] === 'Ganadería / Producción pecuaria'
+                      ? 'url(/src/assets/images/livestock.jpg)'
+                      : sectors[currentSlide] === 'Minería'
+                      ? 'url(/src/assets/images/mining.jpg)'
+                      : sectors[currentSlide] === 'Servicios empresariales'
+                      ? 'url(/src/assets/images/sectionBusiness.jpg)'
+                      : sectors[currentSlide] === 'Industria / Manufactura'
+                      ? 'url(/src/assets/images/manufacturing.jpg)'
+                      : sectors[currentSlide] === 'Construcción'
+                      ? 'url(/src/assets/images/construction.jpg)'
+                      : sectors[currentSlide] === 'Turismo y transporte'
+                      ? 'url(/src/assets/images/transport.jpg)'
+                      : 'none',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
                 >
                   <div className="slide-content">
                     <div className="sector-icon">
@@ -249,61 +268,96 @@ const NuestrosServicios = () => {
             animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
+            {/* Top Level - Main Benefit */}
             <motion.div 
               className="pyramid-level main-benefit"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={benefitsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
+              whileHover={{ scale: 1.05, y: -10 }}
             >
               <h3>INCREMENTA CAPACIDAD PRODUCTIVA DE TU EMPRESA</h3>
             </motion.div>
             
+            {/* Second Level - Secondary Benefits */}
             <motion.div 
               className="pyramid-level secondary-benefits"
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <div className="benefit-item">
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -8 }}
+              >
                 <h4>DISMINUYE COSTO DE OPORTUNIDAD SOBRE EL CAPITAL DE TRABAJO</h4>
-              </div>
-              <div className="benefit-item">
-                <h4>MEJOR MANEJO DE FLUJO DE CAJA E ÍNDICES FINANCIEROS</h4>
-              </div>
-              <div className="benefit-item">
-                <h4>MEJORES RESULTADOS AL UTILIZACIÓN DE OPEX EN LUGAR DE CAPEX</h4>
-              </div>
+              </motion.div>
             </motion.div>
             
+            {/* Third Level - Tertiary Benefits */}
             <motion.div 
               className="pyramid-level tertiary-benefits"
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <div className="benefit-item">
-                <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
-              </div>
-              <div className="benefit-item">
-                <h4>RESULTADOS PREDECIBLES</h4>
-              </div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -6 }}
+              >
+                <h4>MEJOR MANEJO DE FLUJO DE CAJA E ÍNDICES FINANCIEROS</h4>
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -6 }}
+              >
+                <h4>MEJORES RESULTADOS AL UTILIZACIÓN DE OPEX EN LUGAR DE CAPEX</h4>
+              </motion.div>
             </motion.div>
             
+            {/* Fourth Level - Quaternary Benefits */}
             <motion.div 
               className="pyramid-level quaternary-benefits"
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.4 }}
             >
-              <div className="benefit-item">
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
                 <h4>MÁS EQUIPO POR EL MISMO PRESUPUESTO</h4>
-              </div>
-              <div className="benefit-item">
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
+                <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
                 <h4>MAYOR SATISFACCIÓN DEL USUARIO</h4>
-              </div>
-              <div className="benefit-item">
-                <h4>MEJOR CONTROL DE ACTIVOS Y CREACIÓN DE DISCIPLINA PARA RENOVACIÓN</h4>
-              </div>
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
+                <h4>RESULTADOS PREDECIBLES</h4>
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
+                <h4>MEJOR CONTROL DE ACTIVOS</h4>
+              </motion.div>
+              <motion.div 
+                className="benefit-item"
+                whileHover={{ scale: 1.05, y: -4 }}
+              >
+                <h4>Y CREACIÓN DE DISCIPLINA PARA RENOVACIÓN</h4>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

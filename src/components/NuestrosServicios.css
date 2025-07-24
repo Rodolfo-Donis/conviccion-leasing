@@ -212,6 +212,28 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-xl);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+}
+
+.carousel-slide[style*="backgroundImage"] {
+  position: relative;
+}
+
+.carousel-slide[style*="backgroundImage"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 56, 101, 0.7);
+  z-index: 1;
+}
+
+.carousel-slide[style*="backgroundImage"] .slide-content {
+  position: relative;
+  z-index: 2;
 }
 
 .slide-content {
@@ -323,27 +345,29 @@
 }
 
 .benefits-pyramid {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   position: relative;
+  padding: var(--spacing-xl) 0;
 }
 
 .pyramid-level {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   flex-wrap: wrap;
   position: relative;
 }
 
+/* Top Level - Main Benefit (Orange) */
 .main-benefit {
   background: var(--color-yellow);
   color: var(--color-white);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
   width: 600px;
   height: 100px;
   position: relative;
@@ -353,8 +377,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  border-radius: var(--border-radius-sm);
   box-shadow: 0 8px 25px rgba(242, 164, 59, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .main-benefit::before {
@@ -366,7 +391,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left var(--transition-slow);
-  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  border-radius: var(--border-radius-sm);
 }
 
 .main-benefit:hover {
@@ -382,7 +407,7 @@
 .main-benefit h3 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-extrabold);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   margin: 0;
   text-align: center;
   line-height: 1.2;
@@ -391,7 +416,8 @@
   transition: all var(--transition-normal);
   color: var(--color-white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  padding: 0 var(--spacing-md);
 }
 
 .main-benefit:hover h3 {
@@ -399,8 +425,9 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Second Level - Secondary Benefits (Orange) */
 .secondary-benefits {
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -409,8 +436,8 @@
   background: var(--color-yellow);
   color: var(--color-white);
   padding: var(--spacing-lg);
-  width: 280px;
-  height: 80px;
+  width: 400px;
+  height: 90px;
   position: relative;
   z-index: 3;
   transition: all var(--transition-slow);
@@ -418,9 +445,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 0 var(--spacing-sm);
-  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  margin: 0 var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
   box-shadow: 0 6px 20px rgba(242, 164, 59, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .secondary-benefits .benefit-item::before {
@@ -432,7 +460,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transition: left var(--transition-slow);
-  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  border-radius: var(--border-radius-sm);
 }
 
 .secondary-benefits .benefit-item:hover {
@@ -457,7 +485,8 @@
   transition: all var(--transition-normal);
   color: var(--color-white);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+  padding: 0 var(--spacing-md);
 }
 
 .secondary-benefits .benefit-item:hover h4 {
@@ -465,9 +494,10 @@
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Third Level - Tertiary Benefits (Orange) */
 .tertiary-benefits {
-  gap: var(--spacing-md);
-  max-width: 500px;
+  gap: var(--spacing-sm);
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -475,8 +505,8 @@
   background: var(--color-yellow);
   color: var(--color-white);
   padding: var(--spacing-lg);
-  width: 240px;
-  height: 70px;
+  width: 280px;
+  height: 80px;
   position: relative;
   z-index: 2;
   transition: all var(--transition-slow);
@@ -484,9 +514,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 0 var(--spacing-sm);
-  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  margin: 0 var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
   box-shadow: 0 6px 20px rgba(242, 164, 59, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .tertiary-benefits .benefit-item::before {
@@ -498,7 +529,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transition: left var(--transition-slow);
-  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  border-radius: var(--border-radius-sm);
 }
 
 .tertiary-benefits .benefit-item:hover {
@@ -514,7 +545,7 @@
 .tertiary-benefits h4 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   margin: 0;
   text-align: center;
   line-height: 1.2;
@@ -523,7 +554,8 @@
   transition: all var(--transition-normal);
   color: var(--color-white);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
+  padding: 0 var(--spacing-md);
 }
 
 .tertiary-benefits .benefit-item:hover h4 {
@@ -531,18 +563,19 @@
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Fourth Level - Quaternary Benefits (Blue) */
 .quaternary-benefits {
-  gap: var(--spacing-md);
-  max-width: 800px;
+  gap: var(--spacing-sm);
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .quaternary-benefits .benefit-item {
-  background: var(--color-sky-blue);
+  background: var(--color-dark-blue);
   color: var(--color-white);
-  padding: var(--spacing-lg);
-  width: 200px;
-  height: 60px;
+  padding: var(--spacing-md);
+  width: 180px;
+  height: 70px;
   position: relative;
   z-index: 1;
   transition: all var(--transition-slow);
@@ -550,9 +583,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 0 var(--spacing-sm);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 6px 20px rgba(100, 197, 225, 0.25);
+  margin: 0 var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 6px 20px rgba(27, 56, 101, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .quaternary-benefits .benefit-item::before {
@@ -564,13 +598,13 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transition: left var(--transition-slow);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-sm);
 }
 
 .quaternary-benefits .benefit-item:hover {
   transform: translateY(-4px) scale(1.02);
   filter: brightness(1.1);
-  box-shadow: 0 10px 25px rgba(100, 197, 225, 0.35);
+  box-shadow: 0 10px 25px rgba(27, 56, 101, 0.35);
 }
 
 .quaternary-benefits .benefit-item:hover::before {
@@ -580,7 +614,7 @@
 .quaternary-benefits h4 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   margin: 0;
   text-align: center;
   line-height: 1.2;
@@ -590,6 +624,7 @@
   color: var(--color-white);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.1px;
+  padding: 0 var(--spacing-md);
 }
 
 .quaternary-benefits .benefit-item:hover h4 {
@@ -639,7 +674,7 @@
   }
 
   .section-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
   }
 
   .section-description {
@@ -647,28 +682,28 @@
   }
 
   .equipment-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
   }
 
   .equipment-item {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-md);
   }
 
   .equipment-icon {
-    font-size: var(--font-size-4xl);
-  }
-
-  .carousel-container {
-    height: 450px;
-  }
-
-  .sector-title {
     font-size: var(--font-size-3xl);
   }
 
+  .carousel-container {
+    margin: 0 var(--spacing-md);
+  }
+
+  .sector-title {
+    font-size: var(--font-size-2xl);
+  }
+
   .sector-description {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
   .carousel-btn {
@@ -686,82 +721,110 @@
   }
 
   .pyramid-level {
-    flex-direction: column;
-    align-items: center;
+    gap: var(--spacing-xs);
   }
 
   .main-benefit {
-    width: 400px;
-    height: 80px;
+    width: 500px;
+    height: 85px;
   }
 
   .secondary-benefits .benefit-item {
-    width: 200px;
-    height: 70px;
+    width: 350px;
+    height: 75px;
   }
 
   .tertiary-benefits .benefit-item {
-    width: 180px;
-    height: 60px;
+    width: 250px;
+    height: 70px;
   }
 
   .quaternary-benefits .benefit-item {
-    width: 150px;
-    height: 50px;
+    width: 160px;
+    height: 60px;
   }
 
   .main-benefit h3 {
-    font-size: var(--font-size-base);
-    width: 90%;
-    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
   }
 
   .secondary-benefits h4 {
-    font-size: var(--font-size-xs);
-    width: 95%;
-    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
   }
 
   .tertiary-benefits h4 {
-    font-size: var(--font-size-xs);
-    width: 95%;
-    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
   }
 
   .quaternary-benefits h4 {
     font-size: var(--font-size-xs);
-    width: 95%;
-    padding: var(--spacing-sm);
   }
 
   .cta-button {
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
     font-size: var(--font-size-base);
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
   }
 
   .equipment-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
   }
 
   .carousel-container {
-    height: 350px;
+    margin: 0 var(--spacing-sm);
   }
 
   .sector-icon {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
   }
 
   .sector-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
   }
 
   .sector-description {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
+  }
+
+  .main-benefit {
+    width: 380px;
+    height: 75px;
+  }
+
+  .secondary-benefits .benefit-item {
+    width: 300px;
+    height: 65px;
+  }
+
+  .tertiary-benefits .benefit-item {
+    width: 200px;
+    height: 60px;
+  }
+
+  .quaternary-benefits .benefit-item {
+    width: 140px;
+    height: 55px;
+  }
+
+  .main-benefit h3 {
+    font-size: var(--font-size-sm);
+  }
+
+  .secondary-benefits h4 {
+    font-size: var(--font-size-sm);
+  }
+
+  .tertiary-benefits h4 {
+    font-size: var(--font-size-xs);
+  }
+
+  .quaternary-benefits h4 {
+    font-size: var(--font-size-xs);
   }
 } 

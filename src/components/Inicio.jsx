@@ -66,7 +66,7 @@ const Inicio = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            ELEVA el potencial de tu negocio
+            <span style={{ color: '#e8972d' }}>ELEVA</span> el potencial de tu negocio
           </motion.h1>
           
           <motion.p
@@ -131,16 +131,39 @@ const Inicio = () => {
             ¿Quiénes somos?
           </motion.h2>
           
-          <motion.p
-            className="section-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={quienesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Somos tu aliado en la adquisición de activos productivos a través de leasing. 
-            Con años de experiencia en el mercado guatemalteco, nos especializamos en 
-            proporcionar soluciones financieras que impulsan el crecimiento de tu empresa.
-          </motion.p>
+          <div className="quienes-content">
+            <motion.div
+              className="quienes-image"
+              initial={{ opacity: 0, x: -50 }}
+              animate={quienesInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <img 
+                src="/src/assets/images/quienessomos.png" 
+                alt="¿Quiénes somos? - Convicción Leasing" 
+                className="quienes-img"
+              />
+            </motion.div>
+            
+            <motion.div
+              className="quienes-text"
+              initial={{ opacity: 0, x: 50 }}
+              animate={quienesInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <p className="section-text">
+                Somos tu aliado en la adquisición de activos productivos a través de leasing. 
+                Con años de experiencia en el mercado guatemalteco, nos especializamos en 
+                proporcionar soluciones financieras que impulsan el crecimiento de tu empresa.
+              </p>
+              
+              <p className="section-text">
+                Nuestro compromiso es brindarte las mejores condiciones y un servicio 
+                personalizado que se adapte a las necesidades específicas de tu negocio, 
+                facilitando el acceso a tecnología y equipos de última generación.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -156,16 +179,39 @@ const Inicio = () => {
             Nuestra Misión
           </motion.h2>
           
-          <motion.p
-            className="section-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={misionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Facilitar el acceso a tecnología y equipos de alta calidad para que las 
-            empresas puedan optimizar sus operaciones y aumentar su competitividad 
-            en el mercado, contribuyendo al desarrollo económico del país.
-          </motion.p>
+          <div className="mision-content">
+            <motion.div
+              className="mision-image"
+              initial={{ opacity: 0, x: -50 }}
+              animate={misionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <img 
+                src="/src/assets/images/missionarrow.jpg" 
+                alt="Nuestra Misión - Convicción Leasing" 
+                className="mision-img"
+              />
+            </motion.div>
+            
+            <motion.div
+              className="mision-text"
+              initial={{ opacity: 0, x: 50 }}
+              animate={misionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <p className="section-text">
+                Facilitar el acceso a tecnología y equipos de alta calidad para que las 
+                empresas puedan optimizar sus operaciones y aumentar su competitividad 
+                en el mercado, contribuyendo al desarrollo económico del país.
+              </p>
+              
+              <p className="section-text">
+                Nos comprometemos a brindar soluciones financieras innovadoras que 
+                permitan a nuestros clientes acceder a los recursos necesarios para 
+                crecer y expandir sus operaciones de manera sostenible.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -181,16 +227,39 @@ const Inicio = () => {
             Nuestra Visión
           </motion.h2>
           
-          <motion.p
-            className="section-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={visionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Ser la empresa líder en soluciones de leasing en Guatemala, reconocida 
-            por nuestra innovación, transparencia y compromiso con el éxito de 
-            nuestros clientes, contribuyendo al desarrollo sostenible del sector empresarial.
-          </motion.p>
+          <div className="vision-content">
+            <motion.div
+              className="vision-image"
+              initial={{ opacity: 0, x: -50 }}
+              animate={visionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <img 
+                src="/src/assets/images/vision.jpg" 
+                alt="Nuestra Visión - Convicción Leasing" 
+                className="vision-img"
+              />
+            </motion.div>
+            
+            <motion.div
+              className="vision-text"
+              initial={{ opacity: 0, x: 50 }}
+              animate={visionInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <p className="section-text">
+                Ser la empresa líder en soluciones de leasing en Guatemala, reconocida 
+                por nuestra innovación, transparencia y compromiso con el éxito de 
+                nuestros clientes, contribuyendo al desarrollo sostenible del sector empresarial.
+              </p>
+              
+              <p className="section-text">
+                Aspiramos a ser el referente en el mercado financiero guatemalteco, 
+                destacando por nuestra excelencia en el servicio, innovación constante 
+                y contribución al crecimiento económico del país.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
 

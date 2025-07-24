@@ -181,10 +181,30 @@ const ComoFunciona = () => {
                 >
                   <div className="tab-content-inner">
                     <div className="tab-image">
-                      <div className="image-placeholder">
-                        <span>{tab.icon}</span>
-                        <p>Imagen de {tab.name}</p>
-                      </div>
+                      {tab.id === 'financiero' ? (
+                        <img 
+                          src="/src/assets/images/leasingfinanciero.jpg" 
+                          alt={`Imagen de ${tab.name}`}
+                          className="tab-image-content"
+                        />
+                      ) : tab.id === 'operativo' ? (
+                        <img 
+                          src="/src/assets/images/leasingoperativo.jpg" 
+                          alt={`Imagen de ${tab.name}`}
+                          className="tab-image-content"
+                        />
+                      ) : tab.id === 'sale-leaseback' ? (
+                        <img 
+                          src="/src/assets/images/leasingsellback.jpg" 
+                          alt={`Imagen de ${tab.name}`}
+                          className="tab-image-content"
+                        />
+                      ) : (
+                        <div className="image-placeholder">
+                          <span>{tab.icon}</span>
+                          <p>Imagen de {tab.name}</p>
+                        </div>
+                      )}
                     </div>
                     <div className="tab-text">
                       <h4>{tab.name}</h4>
