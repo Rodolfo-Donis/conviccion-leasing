@@ -32,9 +32,27 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
 
+  const handleWhatsAppContact = () => {
+    const formMessage = encodeURIComponent(
+      `Hola, me interesa contactar con Convicción Leasing.\n\n` +
+      `Nombre: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Empresa: ${formData.company}\n` +
+      `Teléfono: ${formData.phone}\n` +
+      `Mensaje: ${formData.message}`
+    )
+    const whatsappUrl = `https://wa.me/50251097898?text=${formMessage}`
+    window.open(whatsappUrl, '_blank')
+  }
+
   useEffect(() => {
     // Initialize EmailJS with your user ID
-    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID || 'your_user_id')
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID
+    if (userId && userId !== 'your_user_id') {
+      emailjs.init(userId)
+    } else {
+      console.warn('EmailJS User ID not configured. Please check your environment variables.')
+    }
   }, [])
 
   const handleInputChange = (e) => {
@@ -51,6 +69,18 @@ const Contact = () => {
     setSubmitStatus(null)
 
     try {
+      // Check if EmailJS is properly configured
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const userId = import.meta.env.VITE_EMAILJS_USER_ID
+
+      if (!serviceId || !templateId || !userId || 
+          serviceId === 'your_service_id' || 
+          templateId === 'your_template_id' || 
+          userId === 'your_user_id') {
+        throw new Error('EmailJS configuration incomplete')
+      }
+
       const templateParams = {
         to_email: import.meta.env.VITE_CONTACT_EMAIL || 'info@conviccionleasing.com',
         from_name: formData.name,
@@ -60,11 +90,7 @@ const Contact = () => {
         message: formData.message
       }
       
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id',
-        templateParams
-      )
+      await emailjs.send(serviceId, templateId, templateParams)
 
       setSubmitStatus('success')
       setFormData({
@@ -257,7 +283,25 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  ❌ Lo sentimos, hubo un error al enviar tu mensaje. Por favor intenta de nuevo.
+                  ❌ Lo sentimos, hubo un error al enviar tu mensaje. 
+                  <br />
+                  <strong>Contacto directo:</strong>
+                  <br />
+                  📧 Email: donisrodolfo@gmail.com
+                  <br />
+                  📞 Teléfono: 502 2335 3637
+                  <br />
+                  💬 WhatsApp: 502 5109 7898
+                  <br />
+                  <motion.button
+                    type="button"
+                    className="whatsapp-fallback-btn"
+                    onClick={handleWhatsAppContact}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    📱 Contactar por WhatsApp
+                  </motion.button>
                 </motion.div>
               )}
             </motion.form>

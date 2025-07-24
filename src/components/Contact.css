@@ -464,6 +464,27 @@
   border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+.whatsapp-fallback-btn {
+  background: #25d366;
+  color: var(--color-white);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.whatsapp-fallback-btn:hover {
+  background: #128c7e;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
 /* Contact Information + Map Section - Modern Grid Layout */
 .contact-info-map-section {
   background: linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-white) 100%);

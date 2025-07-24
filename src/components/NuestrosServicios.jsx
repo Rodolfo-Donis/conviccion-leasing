@@ -10,6 +10,12 @@ import sectionBusiness from '../assets/images/sectionBusiness.jpg'
 import manufacturing from '../assets/images/manufacturing.jpg'
 import construction from '../assets/images/construction.jpg'
 import transport from '../assets/images/transport.jpg'
+import tractor from '../assets/images/tractor.jpg'
+import tractor2 from '../assets/images/tractor2.jpg'
+import camion from '../assets/images/camion.jpg'
+import tele from '../assets/images/tele.jpg'
+import doctor from '../assets/images/doctor.jpg'
+import location from '../assets/images/location.jpg'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -116,12 +122,12 @@ const NuestrosServicios = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               {[
-                { icon: '🚜', label: 'Agricultura' },
-                { icon: '🏗️', label: 'Construcción' },
-                { icon: '🚛', label: 'Transporte' },
-                { icon: '🏥', label: 'Médico' },
-                { icon: '💻', label: 'Tecnología' },
-                { icon: '🏢', label: 'Industrial' }
+                { icon: '🚜', label: 'Agricultura', image: tractor },
+                { icon: '🏗️', label: 'Construcción', image: tractor2 },
+                { icon: '🚛', label: 'Transporte', image: camion },
+                { icon: '🏥', label: 'Médico', image: doctor },
+                { icon: '💻', label: 'Tecnología', image: tele },
+                { icon: '🏢', label: 'Industrial', image: location }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -141,7 +147,13 @@ const NuestrosServicios = () => {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <div className="equipment-icon">{item.icon}</div>
+                  <div className="equipment-icon">
+                    {item.image ? (
+                      <img src={item.image} alt={item.label} className="equipment-image" />
+                    ) : (
+                      item.icon
+                    )}
+                  </div>
                   <span className="equipment-label">{item.label}</span>
                 </motion.div>
               ))}
@@ -277,9 +289,9 @@ const NuestrosServicios = () => {
           >
             {/* Top Level - Main Benefit */}
             <motion.div 
-              className="pyramid-level main-benefit"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={benefitsInView ? { opacity: 1, scale: 1 } : {}}
+              className={`pyramid-level main-benefit ${benefitsInView ? 'scroll-animate' : ''}`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
               whileHover={{ scale: 1.05, y: -10 }}
             >
@@ -288,83 +300,102 @@ const NuestrosServicios = () => {
             
             {/* Second Level - Secondary Benefits */}
             <motion.div 
-              className="pyramid-level secondary-benefits"
+              className={`pyramid-level secondary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
               <motion.div 
-                className="benefit-item"
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 1.2 }}
                 whileHover={{ scale: 1.05, y: -8 }}
               >
                 <h4>DISMINUYE COSTO DE OPORTUNIDAD SOBRE EL CAPITAL DE TRABAJO</h4>
+              </motion.div>
+              <motion.div 
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 1.4 }}
+                whileHover={{ scale: 1.05, y: -8 }}
+              >
+                <h4>MEJOR MANEJO DE FLUJO DE CAJA E ÍNDICES FINANCIEROS</h4>
               </motion.div>
             </motion.div>
             
             {/* Third Level - Tertiary Benefits */}
             <motion.div 
-              className="pyramid-level tertiary-benefits"
+              className={`pyramid-level tertiary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
             >
               <motion.div 
-                className="benefit-item"
-                whileHover={{ scale: 1.05, y: -6 }}
-              >
-                <h4>MEJOR MANEJO DE FLUJO DE CAJA E ÍNDICES FINANCIEROS</h4>
-              </motion.div>
-              <motion.div 
-                className="benefit-item"
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 1.8 }}
                 whileHover={{ scale: 1.05, y: -6 }}
               >
                 <h4>MEJORES RESULTADOS AL UTILIZACIÓN DE OPEX EN LUGAR DE CAPEX</h4>
+              </motion.div>
+              <motion.div 
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 2.0 }}
+                whileHover={{ scale: 1.05, y: -6 }}
+              >
+                <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
+              </motion.div>
+              <motion.div 
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 2.2 }}
+                whileHover={{ scale: 1.05, y: -6 }}
+              >
+                <h4>RESULTADOS PREDECIBLES</h4>
               </motion.div>
             </motion.div>
             
             {/* Fourth Level - Quaternary Benefits */}
             <motion.div 
-              className="pyramid-level quaternary-benefits"
+              className={`pyramid-level quaternary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              transition={{ duration: 0.8, delay: 2.4 }}
             >
               <motion.div 
-                className="benefit-item"
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 2.6 }}
                 whileHover={{ scale: 1.05, y: -4 }}
               >
                 <h4>MÁS EQUIPO POR EL MISMO PRESUPUESTO</h4>
               </motion.div>
               <motion.div 
-                className="benefit-item"
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
-              </motion.div>
-              <motion.div 
-                className="benefit-item"
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 2.8 }}
                 whileHover={{ scale: 1.05, y: -4 }}
               >
                 <h4>MAYOR SATISFACCIÓN DEL USUARIO</h4>
               </motion.div>
               <motion.div 
-                className="benefit-item"
+                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 3.0 }}
                 whileHover={{ scale: 1.05, y: -4 }}
               >
-                <h4>RESULTADOS PREDECIBLES</h4>
+                <h4>MEJOR CONTROL DE ACTIVOS Y CREACIÓN DE DISCIPLINA PARA RENOVACIÓN</h4>
               </motion.div>
-              <motion.div 
-                className="benefit-item"
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>MEJOR CONTROL DE ACTIVOS</h4>
-              </motion.div>
-              <motion.div 
-                className="benefit-item"
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>Y CREACIÓN DE DISCIPLINA PARA RENOVACIÓN</h4>
-              </motion.div>
+
             </motion.div>
           </motion.div>
         </div>
