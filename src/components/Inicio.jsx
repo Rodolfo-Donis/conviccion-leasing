@@ -3,6 +3,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import emailjs from 'emailjs-com'
 import './Inicio.css'
+import quienesSomos from '../assets/images/quienessomos.png'
+import missionArrow from '../assets/images/missionarrow.jpg'
+import vision from '../assets/images/vision.jpg'
 
 const Inicio = () => {
   const [hoveredValue, setHoveredValue] = useState(null)
@@ -139,7 +142,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/conviccion-leasing/assets/images/quienessomos.png" 
+                                  src={quienesSomos} 
                 alt="¿Quiénes somos? - Convicción Leasing" 
                 className="quienes-img"
               />
@@ -187,7 +190,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/conviccion-leasing/assets/images/missionarrow.jpg" 
+                                  src={missionArrow} 
                 alt="Nuestra Misión - Convicción Leasing" 
                 className="mision-img"
               />
@@ -235,7 +238,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                src="/conviccion-leasing/assets/images/vision.jpg" 
+                                  src={vision} 
                 alt="Nuestra Visión - Convicción Leasing" 
                 className="vision-img"
               />

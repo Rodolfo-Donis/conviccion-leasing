@@ -3,6 +3,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { COMO_FUNCIONA_CONTENT } from '../assets/data/content'
 import './ComoFunciona.css'
+import leasingFinanciero from '../assets/images/leasingfinanciero.jpg'
+import leasingOperativo from '../assets/images/leasingoperativo.jpg'
+import leasingSellback from '../assets/images/leasingsellback.jpg'
 
 const ComoFunciona = () => {
   const [ref, inView] = useInView({
@@ -183,19 +186,19 @@ const ComoFunciona = () => {
                     <div className="tab-image">
                       {tab.id === 'financiero' ? (
                         <img 
-                          src="/conviccion-leasing/assets/images/leasingfinanciero.jpg" 
+                                                      src={leasingFinanciero} 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />
                       ) : tab.id === 'operativo' ? (
                         <img 
-                          src="/conviccion-leasing/assets/images/leasingoperativo.jpg" 
+                                                      src={leasingOperativo} 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />
                       ) : tab.id === 'sale-leaseback' ? (
                         <img 
-                          src="/conviccion-leasing/assets/images/leasingsellback.jpg" 
+                                                      src={leasingSellback} 
                           alt={`Imagen de ${tab.name}`}
                           className="tab-image-content"
                         />

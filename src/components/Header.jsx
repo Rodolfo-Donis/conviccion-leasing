@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
+import logonegativo from '../assets/images/logonegativo.png'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,7 +35,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <img src="/conviccion-leasing/assets/images/logonegativo.png" alt="Convicción Leasing" />
+          <img src={logonegativo} alt="Convicción Leasing" />
           <h2>Convicción Leasing</h2>
         </div>
         

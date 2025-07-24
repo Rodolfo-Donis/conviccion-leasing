@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Footer.css'
+import logoPositivo from '../assets/images/LOGO POSITIVO.png'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -36,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-logo-block">
-            <img src="/conviccion-leasing/assets/images/LOGO POSITIVO.png" alt="Convicción Leasing" className="footer-logo-img" />
+            <img src={logoPositivo} alt="Convicción Leasing" className="footer-logo-img" />
           </div>
         </div>
         <motion.div
