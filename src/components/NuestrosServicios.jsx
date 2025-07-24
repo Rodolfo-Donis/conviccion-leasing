@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { COMPANY_INFO } from '../assets/utils/constants'
 import './NuestrosServicios.css'
+import agriculture from '../assets/images/agriculture.jpg'
+import livestock from '../assets/images/livestock.jpg'
+import mining from '../assets/images/mining.jpg'
+import sectionBusiness from '../assets/images/sectionBusiness.jpg'
+import manufacturing from '../assets/images/manufacturing.jpg'
+import construction from '../assets/images/construction.jpg'
+import transport from '../assets/images/transport.jpg'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -184,19 +191,19 @@ const NuestrosServicios = () => {
                   }}
                   style={{
                     backgroundImage: sectors[currentSlide] === 'Agricultura' 
-                      ? 'url(/src/assets/images/agriculture.jpg)' 
+                      ? `url(${agriculture})` 
                       : sectors[currentSlide] === 'Ganadería / Producción pecuaria'
-                      ? 'url(/src/assets/images/livestock.jpg)'
+                      ? `url(${livestock})`
                       : sectors[currentSlide] === 'Minería'
-                      ? 'url(/src/assets/images/mining.jpg)'
+                      ? `url(${mining})`
                       : sectors[currentSlide] === 'Servicios empresariales'
-                      ? 'url(/src/assets/images/sectionBusiness.jpg)'
+                      ? `url(${sectionBusiness})`
                       : sectors[currentSlide] === 'Industria / Manufactura'
-                      ? 'url(/src/assets/images/manufacturing.jpg)'
+                      ? `url(${manufacturing})`
                       : sectors[currentSlide] === 'Construcción'
-                      ? 'url(/src/assets/images/construction.jpg)'
+                      ? `url(${construction})`
                       : sectors[currentSlide] === 'Turismo y transporte'
-                      ? 'url(/src/assets/images/transport.jpg)'
+                      ? `url(${transport})`
                       : 'none',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
