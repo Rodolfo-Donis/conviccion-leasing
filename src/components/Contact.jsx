@@ -47,11 +47,11 @@ const Contact = () => {
 
   useEffect(() => {
     // Initialize EmailJS with your user ID
-    const userId = import.meta.env.VITE_EMAILJS_USER_ID
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
     if (userId && userId !== 'your_user_id') {
       emailjs.init(userId)
     } else {
-      console.warn('EmailJS User ID not configured. Please check your environment variables.')
+      console.warn('EmailJS User ID not configured. Using fallback configuration.')
     }
   }, [])
 
@@ -70,9 +70,9 @@ const Contact = () => {
 
     try {
       // Check if EmailJS is properly configured
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_zpgpytt'
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_aif0p1v'
+      const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
 
       if (!serviceId || !templateId || !userId || 
           serviceId === 'your_service_id' || 
@@ -102,6 +102,11 @@ const Contact = () => {
       })
     } catch (error) {
       console.error('Email send error:', error)
+      console.log('EmailJS Config:', {
+        serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_zpgpytt',
+        templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_aif0p1v',
+        userId: import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
+      })
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -284,6 +289,13 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   ❌ Lo sentimos, hubo un error al enviar tu mensaje. 
+                  <br />
+                  <strong>Esto puede deberse a:</strong>
+                  <br />
+                  • Configuración temporal del servidor
+                  <br />
+                  • Problemas de conectividad
+                  <br />
                   <br />
                   <strong>Contacto directo:</strong>
                   <br />
