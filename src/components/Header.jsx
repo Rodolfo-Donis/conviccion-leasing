@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import './Header.css'
-import logonegativo from '../assets/images/logonegativo.png'
-
+import logoPositivo from '../assets/images/LOGO POSITIVO.png'
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -34,10 +34,21 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="logo">
-          <img src={logonegativo} alt="Convicción Leasing" />
-          <h2>Convicción Leasing</h2>
-        </div>
+        <motion.div 
+          className="logo"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.img 
+            src={logoPositivo} 
+            alt="Convicción Leasing" 
+            className='logo-img'
+            whileHover={{ scale: 1.05, rotate: -1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          />
+        </motion.div>
         
         <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul className="nav-links">
