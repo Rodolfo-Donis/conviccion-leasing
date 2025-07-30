@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import emailjs from 'emailjs-com'
 import './Contact.css'
 
 const Contact = () => {
@@ -45,16 +44,6 @@ const Contact = () => {
     window.open(whatsappUrl, '_blank')
   }
 
-  useEffect(() => {
-    // Initialize EmailJS with your user ID
-    const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
-    if (userId && userId !== 'your_user_id') {
-      emailjs.init(userId)
-    } else {
-      console.warn('EmailJS User ID not configured. Using fallback configuration.')
-    }
-  }, [])
-
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -69,28 +58,13 @@ const Contact = () => {
     setSubmitStatus(null)
 
     try {
-      // Check if EmailJS is properly configured
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_zpgpytt'
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_aif0p1v'
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
-
-      if (!serviceId || !templateId || !userId || 
-          serviceId === 'your_service_id' || 
-          templateId === 'your_template_id' || 
-          userId === 'your_user_id') {
-        throw new Error('EmailJS configuration incomplete')
+      // Validate required fields
+      if (!formData.name || !formData.email || !formData.message) {
+        throw new Error('Por favor completa todos los campos requeridos')
       }
 
-      const templateParams = {
-        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'info@conviccionleasing.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company,
-        phone: formData.phone,
-        message: formData.message
-      }
-      
-      await emailjs.send(serviceId, templateId, templateParams)
+      // Send to WhatsApp
+      handleWhatsAppContact()
 
       setSubmitStatus('success')
       setFormData({
@@ -101,12 +75,7 @@ const Contact = () => {
         message: ''
       })
     } catch (error) {
-      console.error('Email send error:', error)
-      console.log('EmailJS Config:', {
-        serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_zpgpytt',
-        templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_aif0p1v',
-        userId: import.meta.env.VITE_EMAILJS_USER_ID || 'qBPtjmxLE_j2Otv2a'
-      })
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -145,7 +114,7 @@ const Contact = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Completa este formulario y uno de nuestros asesores se pondrá en contacto.
+            Completa este formulario y serás dirigido a WhatsApp para contactar con nuestros asesores.
           </motion.p>
         </div>
       </div>
@@ -266,8 +235,7 @@ const Contact = () => {
                   <span className="loading-spinner">Enviando...</span>
                 ) : (
                   <>
-                    Enviar mensaje
-                    <span className="btn-icon">→</span>
+                    Enviar Mensaje
                   </>
                 )}
               </motion.button>
@@ -278,7 +246,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  ✅ ¡Gracias! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto pronto.
+                  ✅ ¡Perfecto! Se abrirá WhatsApp con tu mensaje pre-llenado. Nuestro equipo te responderá pronto.
                 </motion.div>
               )}
 
@@ -288,32 +256,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  ❌ Lo sentimos, hubo un error al enviar tu mensaje. 
-                  <br />
-                  <strong>Esto puede deberse a:</strong>
-                  <br />
-                  • Configuración temporal del servidor
-                  <br />
-                  • Problemas de conectividad
-                  <br />
-                  <br />
-                  <strong>Contacto directo:</strong>
-                  <br />
-                  📧 Email: donisrodolfo@gmail.com
-                  <br />
-                  📞 Teléfono: 502 2335 3637
-                  <br />
-                  💬 WhatsApp: 502 5109 7898
-                  <br />
-                  <motion.button
-                    type="button"
-                    className="whatsapp-fallback-btn"
-                    onClick={handleWhatsAppContact}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    📱 Contactar por WhatsApp
-                  </motion.button>
+                  ❌ Por favor completa todos los campos requeridos (Nombre, Email y Mensaje).
                 </motion.div>
               )}
             </motion.form>
