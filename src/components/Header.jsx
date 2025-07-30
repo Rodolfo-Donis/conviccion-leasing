@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './Header.css'
-import logoPositivo from '../assets/images/LOGO POSITIVO.png'
+import webLogo from '../assets/images/web.png'
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -41,7 +41,7 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.img 
-            src={logoPositivo} 
+            src={webLogo} 
             alt="Convicción Leasing" 
             className='logo-img'
             whileHover={{ scale: 1.05, rotate: -1 }}

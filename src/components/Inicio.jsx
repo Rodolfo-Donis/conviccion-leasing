@@ -3,17 +3,18 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import emailjs from 'emailjs-com'
 import './Inicio.css'
-import quienesSomos from '../assets/images/quienessomos.png'
-import missionArrow from '../assets/images/missionarrow.jpg'
-import vision from '../assets/images/vision.jpg'
+import quienesSomos from '../assets/images/quienes2.png'
+import missionArrow from '../assets/images/arrow.png'
+import vision from '../assets/images/crazyEye.png'
+import bannerImage from '../assets/images/banner.png'
 
 const Inicio = () => {
-  const [hoveredValue, setHoveredValue] = useState(null)
 
   // Individual scroll triggers for each section
   const [heroRef, heroInView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true
+    threshold: 0.1,
+    triggerOnce: true,
+    rootMargin: '0px 0px -50px 0px'
   })
 
   const [quienesRef, quienesInView] = useInView({
@@ -36,13 +37,17 @@ const Inicio = () => {
     triggerOnce: true
   })
 
+  const [hoveredValue, setHoveredValue] = useState(null)
+
   const valores = [
-    { letter: 'E', meaning: 'Excelencia' },
-    { letter: 'L', meaning: 'Liderazgo' },
-    { letter: 'E', meaning: 'Eficiencia' },
-    { letter: 'V', meaning: 'Voluntad' },
-    { letter: 'A', meaning: 'Agradecimiento' }
+    { letra: 'E', significado: 'Excelencia' },
+    { letra: 'L', significado: 'Liderazgo' },
+    { letra: 'E', significado: 'Eficiencia' },
+    { letra: 'V', significado: 'Valor' },
+    { letra: 'A', significado: 'Atención' }
   ]
+
+
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Hola, me interesa cotizar un leasing para mi negocio.')
@@ -61,12 +66,17 @@ const Inicio = () => {
   return (
     <section id="inicio" className="inicio section">
       {/* Hero Banner */}
-      <div className={`hero-banner ${heroInView ? 'scroll-animate' : ''}`} ref={heroRef}>
+      <div 
+        className="hero-banner scroll-animate" 
+        ref={heroRef}
+        style={{ backgroundImage: `url(${bannerImage})` }}
+      >
+        <div className="hero-overlay"></div>
         <div className="hero-content">
           <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span style={{ color: '#e8972d' }}>ELEVA</span> el potencial de tu negocio
@@ -75,7 +85,7 @@ const Inicio = () => {
           <motion.p
             className="hero-subtitle"
             initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Soluciones de leasing que te brindan crecimiento y productividad
@@ -85,7 +95,7 @@ const Inicio = () => {
             className="cta-button"
             onClick={handleWhatsAppClick}
             initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             whileHover={{ 
               scale: 1.05,
@@ -99,7 +109,7 @@ const Inicio = () => {
           <motion.div
             className="social-media"
             initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <button
@@ -120,6 +130,16 @@ const Inicio = () => {
             </button>
           </motion.div>
         </div>
+      </div>
+
+      {/* New Div with CTA Button */}
+      <div className="cta-section">
+        <button
+          className="cta-button-secondary"
+          onClick={handleWhatsAppClick}
+        >
+          Cotiza ahora
+        </button>
       </div>
 
       {/* ¿Quiénes somos? */}
@@ -266,50 +286,46 @@ const Inicio = () => {
         </div>
       </div>
 
-      {/* Nuestros Valores */}
-      <div className={`valores ${valoresInView ? 'scroll-animate' : ''}`} ref={valoresRef}>
+      {/* Nuestros Valores Title */}
+      <div className="valores-title-section">
         <div className="container">
           <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={valoresInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Nuestros Valores
           </motion.h2>
-          
+        </div>
+      </div>
+
+      {/* Nuestros Valores */}
+      <div className={`valores ${valoresInView ? 'scroll-animate' : ''}`} ref={valoresRef}>
+        <div className="container">
           <motion.div
             className="valores-grid"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={valoresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {valores.map((valor, index) => (
               <motion.div
-                key={index}
+                key={valor.letra}
                 className="valor-card"
-                initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                animate={valoresInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.6 + index * 0.1,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15
-                }}
-                onHoverStart={() => setHoveredValue(index)}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={valoresInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                onHoverStart={() => setHoveredValue(valor.letra)}
                 onHoverEnd={() => setHoveredValue(null)}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
               >
                 <div className="card-inner">
                   <div className="card-front">
-                    <span className="valor-letter">{valor.letter}</span>
+                    <div className="valor-letter">{valor.letra}</div>
                   </div>
                   <div className="card-back">
-                    <span className="valor-meaning">{valor.meaning}</span>
+                    <div className="valor-meaning">{valor.significado}</div>
                   </div>
                 </div>
               </motion.div>
@@ -317,6 +333,8 @@ const Inicio = () => {
           </motion.div>
         </div>
       </div>
+
+
     </section>
   )
 }

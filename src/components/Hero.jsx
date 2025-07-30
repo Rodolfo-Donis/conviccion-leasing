@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import './Hero.css'
+import bannerImage from '../assets/images/banner.png'
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -27,10 +28,10 @@ const Hero = () => {
     <section className="hero" ref={ref}>
       <div className="hero-background">
         <div className="hero-overlay"></div>
-        {/* Placeholder for hero image - replace with actual image */}
-        <div className="hero-image-placeholder">
-          <div className="image-placeholder-text">Hero Image Placeholder</div>
-        </div>
+        <div 
+          className="hero-image"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        ></div>
       </div>
       
       <div className="container">

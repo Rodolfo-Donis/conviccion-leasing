@@ -5,11 +5,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-}
-
-[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
 }
 
 .hero-background {
@@ -31,38 +26,16 @@
   z-index: 2;
 }
 
-.hero-image-placeholder {
+.hero-image {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-  z-index: 1;
-}
-
-[data-theme="dark"] .hero-image-placeholder {
-  background: linear-gradient(45deg, var(--primary-dark), var(--primary-color), var(--accent-color));
-  background-size: 400% 400%;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.image-placeholder-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 1.2rem;
-  font-weight: 500;
-  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .hero-content {
@@ -140,7 +113,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: var(--primary-color);
   color: white;
   box-shadow: var(--shadow-lg);
 }

@@ -1,7 +1,47 @@
+/* Quicksand Font Configuration */
+.quicksand-300 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.quicksand-400 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quicksand-500 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.quicksand-600 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.quicksand-700 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quicksand-bold {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Import Quicksand Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 /* Design System Variables */
 :root {
   /* Typography */
-  --font-family-primary: 'Open Sans', sans-serif;
+  --font-family-primary: 'Quicksand', sans-serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
