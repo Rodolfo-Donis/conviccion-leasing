@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import emailjs from 'emailjs-com'
 import './Inicio.css'
 import quienesSomos from '../assets/images/quienes2.png'
 import missionArrow from '../assets/images/arrow.png'
 import vision from '../assets/images/crazyEye.png'
 import bannerImage from '../assets/images/banner.png'
+import iconoS from '../assets/images/icono-S.png'
+import iconoL from '../assets/images/icono-L.png'
+import iconoT from '../assets/images/icono-T.png'
+import iconoB from '../assets/images/icono-B.png'
+import iconoC from '../assets/images/icono-C.png'
 
 const Inicio = () => {
 
@@ -322,7 +326,24 @@ const Inicio = () => {
               >
                 <div className="card-inner">
                   <div className="card-front">
-                    <div className="valor-letter">{valor.letra}</div>
+                    <div className="valor-letter">
+                      {valor.letra}
+                      {valor.letra === 'E' && index === 0 && (
+                        <img src={iconoS} alt="E" className="valor-icon" />
+                      )}
+                      {valor.letra === 'L' && (
+                        <img src={iconoL} alt="L" className="valor-icon" />
+                      )}
+                      {valor.letra === 'E' && index === 2 && (
+                        <img src={iconoT} alt="E" className="valor-icon" />
+                      )}
+                      {valor.letra === 'V' && (
+                        <img src={iconoB} alt="V" className="valor-icon" />
+                      )}
+                      {valor.letra === 'A' && (
+                        <img src={iconoC} alt="A" className="valor-icon" />
+                      )}
+                    </div>
                   </div>
                   <div className="card-back">
                     <div className="valor-meaning">{valor.significado}</div>
