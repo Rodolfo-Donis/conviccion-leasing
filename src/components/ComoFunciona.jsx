@@ -21,7 +21,6 @@ const ComoFunciona = () => {
   const section2Ref = useRef(null)
   const section3Ref = useRef(null)
   const textRef = useRef(null)
-  const imageRef = useRef(null)
   
   // State for scroll animations
   const [headerInView, setHeaderInView] = useState(false)
@@ -133,19 +132,14 @@ const ComoFunciona = () => {
           <div className="que-es-leasing-content">
             <div 
               ref={textRef}
-              className={`que-es-leasing-text ${section1InView ? 'scroll-animate' : ''}`}
+              className={`que-es-leasing-title ${section1InView ? 'scroll-animate' : ''}`}
             >
               <h3>{sections.queEsLeasing.title}</h3>
-              <p>{sections.queEsLeasing.description}</p>
             </div>
             <div 
-              ref={imageRef}
-              className={`que-es-leasing-image ${section1InView ? 'scroll-animate' : ''}`}
+              className={`que-es-leasing-description ${section1InView ? 'scroll-animate' : ''}`}
             >
-              <div className="image-placeholder">
-                <span>📊</span>
-                <p>Imagen de leasing</p>
-              </div>
+              <p>{sections.queEsLeasing.description}</p>
             </div>
           </div>
         </div>

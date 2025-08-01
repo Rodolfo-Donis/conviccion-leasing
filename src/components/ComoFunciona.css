@@ -51,10 +51,28 @@
 .que-es-leasing {
   margin-bottom: var(--spacing-5xl);
   position: relative;
-  padding: var(--spacing-4xl) 0;
-  background-color: var(--background-light);
+  padding: var(--spacing-4xl) 0 var(--spacing-6xl) 0;
+  background-image: url('../assets/images/tractor.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 1;
   overflow: hidden;
+  width: 100vw;
+  min-height: 120vh;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.que-es-leasing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 56, 101, 0.8);
+  z-index: 1;
 }
 
 /* Scroll animation for the entire section */
@@ -80,62 +98,71 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0 var(--spacing-lg);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  min-height: 120vh;
 }
 
-/* Text content animations */
-.que-es-leasing-text {
+/* Title content animations */
+.que-es-leasing-title {
   opacity: 0;
   transform: translateX(-50px);
   transition: all 1s ease-out;
 }
 
-.que-es-leasing-text.scroll-animate {
+.que-es-leasing-title.scroll-animate {
   opacity: 1;
   transform: translateX(0);
 }
 
-.que-es-leasing-text h3 {
-  font-size: var(--font-size-4xl);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+/* Description content animations */
+.que-es-leasing-description {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease-out 0.2s;
+}
+
+.que-es-leasing-description.scroll-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.que-es-leasing-title h3 {
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
   font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  padding: 30px var(--spacing-lg) var(--spacing-md) var(--spacing-2xl);
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out 0.2s;
 }
 
-.que-es-leasing-text.scroll-animate h3 {
+.que-es-leasing-title.scroll-animate h3 {
   opacity: 1;
   transform: translateY(0);
 }
 
-.que-es-leasing-text p {
+.que-es-leasing-description p {
   font-size: var(--font-size-lg);
-  color: var(--text-secondary);
+  color: var(--color-white);
   line-height: 1.8;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out 0.4s;
 }
 
-.que-es-leasing-text.scroll-animate p {
+.que-es-leasing-description.scroll-animate p {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Image content animations */
 .que-es-leasing-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: translateX(50px) scale(0.9);
-  transition: all 1s ease-out 0.3s;
-}
-
-.que-es-leasing-image.scroll-animate {
-  opacity: 1;
-  transform: translateX(0) scale(1);
+  display: none;
 }
 
 /* Floating animation for the image placeholder */
@@ -174,13 +201,20 @@
 /* Sección 2: Tipos de Leasing - Fade Animation */
 .tipos-leasing {
   margin-bottom: var(--spacing-5xl);
-  background: #d4f0f6;
+  background-image: url('../assets/images/impresora.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: var(--section-padding) 0;
   position: relative;
   z-index: 1;
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.2s ease-out;
+  width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .tipos-leasing.scroll-animate {
@@ -189,8 +223,8 @@
 }
 
 .tipos-leasing h3 {
-  font-size: var(--font-size-4xl);
-  color: var(--text-primary);
+  font-size: var(--font-size-5xl);
+  color: var(--color-dark-blue);
   margin-bottom: var(--spacing-3xl);
   font-weight: 700;
   text-align: center;
@@ -205,11 +239,14 @@
 }
 
 .tabs-container {
-  max-width: 1000px;
+  max-width: 100vw;
   margin: 0 auto;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out 0.5s;
+  padding: 0 var(--spacing-lg);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .tipos-leasing.scroll-animate .tabs-container {
@@ -243,7 +280,7 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   font-weight: 600;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-xl);
   min-width: 200px;
   position: relative;
 }
@@ -309,10 +346,11 @@
 
 .tab-image-content {
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-normal);
+  padding-bottom: var(--spacing-lg);
 }
 
 .tab-image-content:hover {
@@ -544,8 +582,9 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .que-es-leasing-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
+    padding: 0 var(--spacing-xl);
   }
   
   .tab-content-inner {
@@ -564,7 +603,13 @@
 }
 
 @media (max-width: 768px) {
-  .que-es-leasing-text h3,
+  .que-es-leasing-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    text-align: center;
+  }
+  
+  .que-es-leasing-title h3,
   .tipos-leasing h3,
   .pasos-adquirir h3 {
     font-size: var(--font-size-3xl);
@@ -601,7 +646,11 @@
     padding: var(--spacing-3xl) 0;
   }
   
-  .que-es-leasing-text h3,
+  .que-es-leasing-content {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .que-es-leasing-title h3,
   .tipos-leasing h3,
   .pasos-adquirir h3 {
     font-size: var(--font-size-2xl);

@@ -312,7 +312,7 @@
   transition: all 1.2s ease-out;
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 490px;
 }
 
 .valores.scroll-animate {

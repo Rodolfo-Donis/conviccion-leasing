@@ -17,8 +17,8 @@ export const HERO_CONTENT = {
 
 // Cómo Funciona Section Content
 export const COMO_FUNCIONA_CONTENT = {
-  title: 'Cómo Funciona',
-  subtitle: 'Descubre cómo el leasing puede transformar tu negocio con soluciones financieras flexibles y eficientes.',
+  title: '',
+  subtitle: '',
   sections: {
     queEsLeasing: {
       title: '¿Qué es el Leasing?',
@@ -31,19 +31,19 @@ export const COMO_FUNCIONA_CONTENT = {
           id: 'financiero',
           name: 'Leasing Financiero',
           description: 'Brinda al cliente la financiación de los equipos requeridos y los beneficios financieros-operativas que el esquema de leasing ofrece; al finalizar el plazo el cliente tendrá la propiedad de los equipos a través del pago de la Opción a Compra, contractualmente convenida desde el inicio.',
-          icon: '💰'
+          
         },
         {
           id: 'operativo',
           name: 'Leasing Operativo',
           description: 'Brinda al cliente la obtención de los equipos y la facilidad para la renovación de los mismos; es ideal para equipos sobre los que el cliente ha establecido algún período determinado para su reemplazo, según políticas o aspectos técnicos; por ejemplo, activos tecnológicos, vehículos y otros.',
-          icon: '🔄'
+         
         },
         {
           id: 'sale-leaseback',
           name: 'Sale & Leaseback',
           description: 'Brinda al cliente la posibilidad de la obtención de liquidez desde su propio Balance General y gozar de los beneficios que el esquema de leasing brinda. Este aplica en activos de reciente adquisición por parte del cliente; los cuales vende a CONVICCIÓN LEASING y paralelamente suscribe un contrato de Leasing.',
-          icon: '💼'
+          
         }
       ]
     },
