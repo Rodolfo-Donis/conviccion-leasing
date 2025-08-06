@@ -62,15 +62,7 @@
   position: relative;
 }
 
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--color-light-gray), var(--color-dark-blue));
-}
+
 
 .footer-main-row {
   display: flex;
@@ -155,12 +147,13 @@
 }
 
 .footer-icon {
-  font-size: var(--font-size-lg);
-  color: var(--color-yellow);
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition-fast);
+  transition: transform var(--transition-fast);
 }
 
 .footer-contact-text {
@@ -179,18 +172,16 @@
 }
 
 .footer-logo-img {
-  height: 80px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   filter: none;
   background: none;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transition: transform var(--transition-fast);
 }
 
 .footer-logo-img:hover {
   transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .footer-bottom {
