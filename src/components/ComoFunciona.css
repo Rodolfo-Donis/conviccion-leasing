@@ -51,7 +51,7 @@
 .que-es-leasing {
   margin-bottom: var(--spacing-5xl);
   position: relative;
-  padding: var(--spacing-4xl) 0 var(--spacing-6xl) 0;
+  padding: var(--spacing-xl) 0 var(--spacing-2xl) 0;
   background-image: url('../assets/images/tractor.png');
   background-size: cover;
   background-position: center;
@@ -59,7 +59,7 @@
   z-index: 1;
   overflow: hidden;
   width: 100vw;
-  min-height: 120vh;
+  min-height: 60vh;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
@@ -103,7 +103,7 @@
   padding: 0 var(--spacing-lg);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  min-height: 120vh;
+  min-height: 60vh;
 }
 
 /* Title content animations */
@@ -200,12 +200,13 @@
 
 /* Sección 2: Tipos de Leasing - Fade Animation */
 .tipos-leasing {
+  margin-top: 200px;
   margin-bottom: var(--spacing-9xl);
   background-image: url('../assets/images/impresora.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: var(--section-padding) 0 var(--spacing-7xl) 0;
+  padding: 100px 0 var(--spacing-8xl) 0;
   position: relative;
   z-index: 1;
   opacity: 0;
