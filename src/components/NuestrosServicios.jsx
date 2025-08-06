@@ -201,7 +201,7 @@ const NuestrosServicios = () => {
             animate={sectorsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            ¿A qué sectores económicos servimos?
+          En Conviccion Leasing adquirimos para ti los activos productivos que tu empresa requiera
           </motion.h2>
           
           <motion.div 

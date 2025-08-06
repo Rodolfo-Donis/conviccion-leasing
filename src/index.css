@@ -225,6 +225,17 @@ button {
   .container {
     padding: 0 var(--spacing-md);
   }
+  
+  /* Ensure proper mobile layout */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Fix mobile touch targets */
+  button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -233,5 +244,16 @@ button {
     --font-size-4xl: 1.75rem;
     --font-size-3xl: 1.5rem;
     --section-padding: 3rem 0;
+  }
+  
+  /* Additional mobile optimizations */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Ensure text is readable on small screens */
+  p, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 } 

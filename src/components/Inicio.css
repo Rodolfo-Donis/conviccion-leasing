@@ -919,6 +919,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-banner {
+    min-height: 70vh;
+  }
+  
   .hero-title {
     font-size: var(--font-size-2xl);
   }
@@ -1004,5 +1008,14 @@
     width: 40px;
     height: 40px;
     font-size: var(--font-size-base);
+  }
+  
+  .social-media {
+    margin-left: 20px;
+    gap: var(--spacing-sm);
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
   }
 } 
