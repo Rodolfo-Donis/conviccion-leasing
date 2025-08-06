@@ -13,6 +13,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    assetsInlineLimit: 0, // Prevent inlining of assets
     rollupOptions: {
       output: {
         manualChunks: {
@@ -22,5 +23,13 @@ export default defineConfig({
         }
       }
     }
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'framer-motion',
+      'react-intersection-observer'
+    ]
   }
 }) 
