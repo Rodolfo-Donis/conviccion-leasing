@@ -22,7 +22,7 @@ export const COMO_FUNCIONA_CONTENT = {
   sections: {
     queEsLeasing: {
       title: '¿Qué es el Leasing?',
-      description: 'Es la solución financiera que permite a tu empresa el uso, goce y explotación de maquinaria, equipos, y/o bienes productivos sin realizar el desembolso que representa la compra, obteniendo beneficios financieros y operativos. Convicción leasing, los adquiere y pone a tu disposición por el pago de cuotas durante el plazo convenido a través de la suscripción del contrato de leasing. Durante el plazo del contrato los equipos estarán debidamente asegurados. Dependiendo del equipo y función en la actividad productiva de tu negocio decides qué tipo de leasing contratas.'
+      description: 'Es la solución financiera que permite a tu empresa el uso, goce y explotación de maquinaria, equipos, y/o bienes productivos sin realizar el desembolso que representa la compra, obteniendo beneficios financieros y operativos. Convicción leasing, los adquiere y pone a tu disposición por el pago de cuotas durante el plazo convenido a través de la suscripción del contrato de leasing.'
     },
     tiposLeasing: {
       title: 'Tipos de Leasing',

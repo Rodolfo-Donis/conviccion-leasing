@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import './Inicio.css'
-import quienesSomos from '../assets/images/quienes2.png'
+import quienesSomos from '../assets/images/esquema.png'
 import missionArrow from '../assets/images/arrow.png'
 import vision from '../assets/images/crazyEye.png'
-import bannerImage from '../assets/images/banner.png'
+import bannerImage from '../assets/images/banner_update.png'
 import iconoS from '../assets/images/icono-S.png'
 import iconoL from '../assets/images/icono-L.png'
 import iconoT from '../assets/images/icono-T.png'
@@ -47,8 +47,8 @@ const Inicio = () => {
     { letra: 'E', significado: 'Excelencia' },
     { letra: 'L', significado: 'Liderazgo' },
     { letra: 'E', significado: 'Eficiencia' },
-    { letra: 'V', significado: 'Valor' },
-    { letra: 'A', significado: 'Atención' }
+    { letra: 'V', significado: 'Voluntad' },
+    { letra: 'A', significado: 'Agradecimiento' }
   ]
 
 
@@ -179,9 +179,9 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="section-text">
-                Somos tu aliado en la adquisición de activos productivos a través de leasing. 
-                Con años de experiencia en el mercado guatemalteco, nos especializamos en 
-                proporcionar soluciones financieras que impulsan el crecimiento de tu empresa.
+              Tu aliado en la adquisición de activos productivos a través de leasing.
+Expertos en diseñar soluciones de leasing que atiendan estrategias financieras-operativas para optimizar tus resultados económicos financieros.
+Apasionados por servirte con excelencia.
               </p>
               
               <p className="section-text">

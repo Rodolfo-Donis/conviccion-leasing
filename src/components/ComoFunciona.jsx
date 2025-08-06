@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { COMO_FUNCIONA_CONTENT } from '../assets/data/content'
 import './ComoFunciona.css'
-import leasingFinanciero from '../assets/images/leasingfinanciero.jpg'
-import leasingOperativo from '../assets/images/leasingoperativo.jpg'
-import leasingSellback from '../assets/images/leasingsellback.jpg'
+import leasingFinanciero from '../assets/images/leasin-1.png'
+import leasingOperativo from '../assets/images/leasin-2.png'
+import leasingSellback from '../assets/images/leasin-3.png'
 
 const ComoFunciona = () => {
   const [ref, inView] = useInView({
