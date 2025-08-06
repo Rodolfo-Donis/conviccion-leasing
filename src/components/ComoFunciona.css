@@ -200,12 +200,12 @@
 
 /* Sección 2: Tipos de Leasing - Fade Animation */
 .tipos-leasing {
-  margin-bottom: var(--spacing-5xl);
+  margin-bottom: var(--spacing-9xl);
   background-image: url('../assets/images/impresora.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: var(--section-padding) 0;
+  padding: var(--section-padding) 0 var(--spacing-7xl) 0;
   position: relative;
   z-index: 1;
   opacity: 0;
@@ -381,6 +381,28 @@
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.2s ease-out;
+}
+
+.pasos-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-3xl);
+  padding: 0 var(--spacing-lg);
+}
+
+.pasos-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.pasos-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 .pasos-adquirir.scroll-animate {

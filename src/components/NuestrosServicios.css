@@ -200,7 +200,7 @@
   position: relative;
   max-width: 1000px;
   margin: var(--spacing-2xl) auto;
-  height: 600px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,6 +214,9 @@
   border-radius: var(--border-radius-xl);
   background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-sky-blue) 100%);
   box-shadow: var(--shadow-xl);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .carousel-slide {
@@ -228,6 +231,10 @@
   padding: var(--spacing-xl);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .carousel-slide[style*="backgroundImage"] {
@@ -241,7 +248,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(27, 56, 101, 0.7);
+  background: linear-gradient(135deg, rgba(27, 56, 101, 0.3) 0%, rgba(100, 197, 225, 0.2) 100%);
   z-index: 1;
 }
 
@@ -253,6 +260,11 @@
 .slide-content {
   text-align: center;
   color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding-bottom: var(--spacing-4xl);
 }
 
 .sector-icon {
@@ -267,6 +279,7 @@
   font-size: var(--font-size-4xl);
   margin-bottom: var(--spacing-lg);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--color-white);
 }
 
 .sector-description {

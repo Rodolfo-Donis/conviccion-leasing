@@ -6,6 +6,7 @@ import './ComoFunciona.css'
 import leasingFinanciero from '../assets/images/leasin-1.png'
 import leasingOperativo from '../assets/images/leasin-2.png'
 import leasingSellback from '../assets/images/leasin-3.png'
+import pasosLeasin from '../assets/images/pasos-leasin.png'
 
 const ComoFunciona = () => {
   const [ref, inView] = useInView({
@@ -221,33 +222,18 @@ const ComoFunciona = () => {
         >
           <h3 className="text-center">{sections.pasos.title}</h3>
 
-          <div className="pasos-container">
-            {sections.pasos.steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                className="paso-item"
-                initial={{ opacity: 0, y: 30 }}
-                animate={section3InView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              >
-                <div className="paso-number">
-                  <span>{step.number}</span>
-                </div>
-                <div className="paso-icon">
-                  <span>{step.icon}</span>
-                </div>
-                <div className="paso-content">
-                  <h4>{step.title}</h4>
-                  <p>{step.description}</p>
-                </div>
-                {index < sections.pasos.steps.length - 1 && (
-                  <div className="paso-arrow">
-                    <span>→</span>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            className="pasos-image-container"
+            initial={{ opacity: 0, y: 30 }}
+            animate={section3InView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <img 
+              src={pasosLeasin} 
+              alt="Pasos para adquirir leasing"
+              className="pasos-image"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

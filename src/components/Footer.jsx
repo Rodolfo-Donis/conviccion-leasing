@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="footer-contact-block">
             <div className="footer-contact-row address-row">
               <span className="footer-icon">📍</span>
-              <span className="footer-contact-text">Dirección: 12 calle 1-25, Zona 10. Ed. Gémins 10 TS Of. 1005</span>
+              <span className="footer-contact-text">Dirección: 12 calle 1-25, Zona 10. Ed. Géminis 10 TS Of. 1005</span>
             </div>
             <div className="footer-contact-row">
               <span className="footer-icon">📞</span>

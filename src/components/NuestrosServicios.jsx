@@ -16,6 +16,8 @@ import camion from '../assets/images/camion.jpg'
 import tele from '../assets/images/tele.jpg'
 import doctor from '../assets/images/doctor.jpg'
 import location from '../assets/images/location.jpg'
+import vehiculo from '../assets/images/vehiculo-fondo.png'
+import paneles from '../assets/images/panel-fondo.png'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -127,7 +129,9 @@ const NuestrosServicios = () => {
                 { icon: '🚛', label: 'Transporte', image: camion },
                 { icon: '🏥', label: 'Médico', image: doctor },
                 { icon: '💻', label: 'Tecnología', image: tele },
-                { icon: '🏢', label: 'Industrial', image: location }
+                { icon: '🏢', label: 'Industrial', image: location },
+                { icon: '🏢', label: 'Vehiculos', image: vehiculo },
+                { icon: '🏢', label: 'Paneles solares', image: paneles }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -188,50 +192,38 @@ const NuestrosServicios = () => {
             </motion.button>
             
             <div className="carousel-wrapper">
-              <AnimatePresence mode="wait" custom={currentSlide}>
-                <motion.div
-                  key={currentSlide}
-                  className="carousel-slide"
-                  custom={currentSlide}
-                  variants={carouselVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 }
-                  }}
-                  style={{
-                    backgroundImage: sectors[currentSlide] === 'Agricultura' 
-                      ? `url(${agriculture})` 
-                      : sectors[currentSlide] === 'Ganadería / Producción pecuaria'
-                      ? `url(${livestock})`
-                      : sectors[currentSlide] === 'Minería'
-                      ? `url(${mining})`
-                      : sectors[currentSlide] === 'Servicios empresariales'
-                      ? `url(${sectionBusiness})`
-                      : sectors[currentSlide] === 'Industria / Manufactura'
-                      ? `url(${manufacturing})`
-                      : sectors[currentSlide] === 'Construcción'
-                      ? `url(${construction})`
-                      : sectors[currentSlide] === 'Turismo y transporte'
-                      ? `url(${transport})`
-                      : 'none',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                >
-                  <div className="slide-content">
-                    <div className="sector-icon">
-                      {['🌾', '🐄', '⛏️', '🏢', '🏭', '🏗️', '✈️'][currentSlide]}
-                    </div>
-                    <h3 className="sector-title">{sectors[currentSlide]}</h3>
-                    <p className="sector-description">
-                      Soluciones de leasing especializadas para el sector de {sectors[currentSlide].toLowerCase()}
-                    </p>
+              <div
+                key={currentSlide}
+                className="carousel-slide"
+                style={{
+                  backgroundImage: sectors[currentSlide] === 'Agricultura' 
+                    ? `url(${agriculture})` 
+                    : sectors[currentSlide] === 'Ganadería / Producción pecuaria'
+                    ? `url(${livestock})`
+                    : sectors[currentSlide] === 'Minería'
+                    ? `url(${mining})`
+                    : sectors[currentSlide] === 'Servicios empresariales'
+                    ? `url(${sectionBusiness})`
+                    : sectors[currentSlide] === 'Industria / Manufactura'
+                    ? `url(${manufacturing})`
+                    : sectors[currentSlide] === 'Construcción'
+                    ? `url(${construction})`
+                    : sectors[currentSlide] === 'Turismo y transporte'
+                    ? `url(${transport})`
+                    : 'none',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center top',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundAttachment: 'scroll'
+                }}
+              >
+                <div className="slide-content">
+                  <div className="sector-icon">
+                    {['', '', '', '', '', '', ''][currentSlide]}
                   </div>
-                </motion.div>
-              </AnimatePresence>
+                  <h3 className="sector-title">{sectors[currentSlide]}</h3>
+                </div>
+              </div>
             </div>
             
             <motion.button
