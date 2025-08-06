@@ -18,6 +18,7 @@ import doctor from '../assets/images/doctor.jpg'
 import location from '../assets/images/location.jpg'
 import vehiculo from '../assets/images/vehiculo-fondo.png'
 import paneles from '../assets/images/panel-fondo.png'
+import piramide2 from '../assets/images/piramide2.png'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -279,116 +280,15 @@ const NuestrosServicios = () => {
             animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            {/* Top Level - Main Benefit */}
-            <motion.div 
-              className={`pyramid-level main-benefit ${benefitsInView ? 'scroll-animate' : ''}`}
-              initial={{ opacity: 0, y: 50 }}
-              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
+            <motion.img
+              src={piramide2}
+              alt="Pirámide de beneficios"
+              className="pyramid-image"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={benefitsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <h3>INCREMENTA CAPACIDAD PRODUCTIVA DE TU EMPRESA</h3>
-            </motion.div>
-            
-            {/* Second Level - Secondary Benefits */}
-            <motion.div 
-              className={`pyramid-level secondary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                whileHover={{ scale: 1.05, y: -8 }}
-              >
-                <h4>DISMINUYE COSTO DE OPORTUNIDAD SOBRE EL CAPITAL DE TRABAJO</h4>
-              </motion.div>
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1.4 }}
-                whileHover={{ scale: 1.05, y: -8 }}
-              >
-                <h4>MEJOR MANEJO DE FLUJO DE CAJA E ÍNDICES FINANCIEROS</h4>
-              </motion.div>
-            </motion.div>
-            
-            {/* Third Level - Tertiary Benefits */}
-            <motion.div 
-              className={`pyramid-level tertiary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.6 }}
-            >
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1.8 }}
-                whileHover={{ scale: 1.05, y: -6 }}
-              >
-                <h4>MEJORES RESULTADOS AL UTILIZACIÓN DE OPEX EN LUGAR DE CAPEX</h4>
-              </motion.div>
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 2.0 }}
-                whileHover={{ scale: 1.05, y: -6 }}
-              >
-                <h4>REDUCE COSTO DE MANTENIMIENTO POR RENOVAR TUS EQUIPOS</h4>
-              </motion.div>
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 2.2 }}
-                whileHover={{ scale: 1.05, y: -6 }}
-              >
-                <h4>RESULTADOS PREDECIBLES</h4>
-              </motion.div>
-            </motion.div>
-            
-            {/* Fourth Level - Quaternary Benefits */}
-            <motion.div 
-              className={`pyramid-level quaternary-benefits ${benefitsInView ? 'scroll-animate' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 2.4 }}
-            >
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 2.6 }}
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>MÁS EQUIPO POR EL MISMO PRESUPUESTO</h4>
-              </motion.div>
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 2.8 }}
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>MAYOR SATISFACCIÓN DEL USUARIO</h4>
-              </motion.div>
-              <motion.div 
-                className={`benefit-item ${benefitsInView ? 'scroll-animate' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 3.0 }}
-                whileHover={{ scale: 1.05, y: -4 }}
-              >
-                <h4>MEJOR CONTROL DE ACTIVOS Y CREACIÓN DE DISCIPLINA PARA RENOVACIÓN</h4>
-              </motion.div>
-
-            </motion.div>
+              whileHover={{ scale: 1.02 }}
+            />
           </motion.div>
         </div>
 

@@ -164,7 +164,6 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-lg);
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: var(--spacing-2xl);
   align-self: flex-end;
@@ -198,7 +197,6 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-lg);
-  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 

@@ -420,38 +420,29 @@
 }
 
 .benefits-pyramid {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
   position: relative;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
 }
 
-/* Modern track line with animation */
-.benefits-pyramid::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--color-yellow), var(--color-sky-blue), var(--color-dark-blue));
-  border-radius: 2px;
-  z-index: 1;
-  animation: trackPulse 3s ease-in-out infinite;
+.pyramid-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: var(--border-radius-xl);
+  transition: all var(--transition-normal);
+  object-fit: contain;
 }
 
-@keyframes trackPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(242, 164, 59, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(242, 164, 59, 0.6);
-  }
+.pyramid-image:hover {
+  transform: scale(1.02);
 }
+
+
 
 .pyramid-level {
   display: flex;
@@ -814,10 +805,9 @@
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(242, 164, 59, 0.3);
   transition: all var(--transition-normal);
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.5px;
 }
-
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 35px rgba(242, 164, 59, 0.4);

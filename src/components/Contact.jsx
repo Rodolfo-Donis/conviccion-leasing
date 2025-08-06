@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import './Contact.css'
+import finalImage from '../assets/images/final.png'
 
 const Contact = () => {
   // Individual scroll triggers for each section
@@ -85,7 +86,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: "📍",
-      content: "Dirección: 12 calle 1-25, Zona 10. Ed. Gémins 10 TS Of. 1005"
+      content: "Dirección: 12 calle 1-25, Zona 10. Ed. Géminis 10 TS Of. 1005"
     },
     {
       icon: "📞",
@@ -100,7 +101,11 @@ const Contact = () => {
   return (
     <section id="contact" className="contact section">
       {/* Hero Section with Background Image */}
-      <div className={`contact-hero ${heroInView ? 'scroll-animate' : ''}`} ref={heroRef}>
+      <div 
+        className={`contact-hero ${heroInView ? 'scroll-animate' : ''}`} 
+        ref={heroRef}
+        style={{ backgroundImage: `url(${finalImage})` }}
+      >
         <div className="contact-hero-content">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

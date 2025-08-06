@@ -81,14 +81,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, 
-    var(--color-dark-blue) 0%, 
-    var(--color-sky-blue) 100%);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   text-align: center;
   overflow: hidden;
   margin-bottom: var(--spacing-3xl);
-  border-radius: var(--border-radius-xl);
+  border-radius: 0;
   box-shadow: var(--shadow-xl);
   opacity: 0;
   transform: translateY(50px);
@@ -108,14 +108,12 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(27, 56, 101, 0.9) 0%, 
-    rgba(100, 197, 225, 0.8) 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    rgba(27, 56, 101, 0.3) 0%, 
+    rgba(100, 197, 225, 0.2) 100%);
   z-index: 1;
 }
 
-/* Add animated background pattern with blue blur effect */
+/* Add animated background pattern */
 .contact-hero::after {
   content: '';
   position: absolute;
@@ -124,12 +122,11 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 20% 20%, rgba(100, 197, 225, 0.4) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(27, 56, 101, 0.3) 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(242, 164, 59, 0.25) 0%, transparent 80%),
-    radial-gradient(circle at 10% 90%, rgba(27, 56, 101, 0.3) 0%, transparent 70%),
-    radial-gradient(circle at 90% 10%, rgba(100, 197, 225, 0.35) 0%, transparent 70%);
-  filter: blur(1px);
+    radial-gradient(circle at 20% 20%, rgba(100, 197, 225, 0.2) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(27, 56, 101, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(242, 164, 59, 0.1) 0%, transparent 80%),
+    radial-gradient(circle at 10% 90%, rgba(27, 56, 101, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at 90% 10%, rgba(100, 197, 225, 0.2) 0%, transparent 70%);
   animation: backgroundFloat 25s ease-in-out infinite;
   z-index: 1;
 }
@@ -176,6 +173,7 @@
   margin-bottom: var(--spacing-lg);
   line-height: 1.2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--color-white);
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out 0.5s;
@@ -388,7 +386,6 @@
 .submit-btn:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-yellow) 100%);
 }
 
 .submit-btn:disabled {
