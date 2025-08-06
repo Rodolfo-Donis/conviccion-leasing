@@ -3,13 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { COMPANY_INFO } from '../assets/utils/constants'
 import './NuestrosServicios.css'
-import agriculture from '../assets/images/agriculture.jpg'
-import livestock from '../assets/images/livestock.jpg'
-import mining from '../assets/images/mining.jpg'
-import sectionBusiness from '../assets/images/sectionBusiness.jpg'
-import manufacturing from '../assets/images/manufacturing.jpg'
-import construction from '../assets/images/construction.jpg'
-import transport from '../assets/images/transport.jpg'
 import tractor from '../assets/images/tractor.jpg'
 import tractor2 from '../assets/images/tractor2.jpg'
 import camion from '../assets/images/camion.jpg'
@@ -19,6 +12,27 @@ import location from '../assets/images/location.jpg'
 import vehiculo from '../assets/images/vehiculo-fondo.png'
 import paneles from '../assets/images/panel-fondo.png'
 import piramide2 from '../assets/images/piramide2.png'
+
+import imageCarousel1 from '../assets/images/carousel/1CARRETE.png'
+import imageCarousel2 from '../assets/images/carousel/2CARRETE.png'
+import imageCarousel3 from '../assets/images/carousel/3CARRETE.png'
+import imageCarousel4 from '../assets/images/carousel/4CARRETE.png'
+import imageCarousel5 from '../assets/images/carousel/5CARRETE.png'
+import imageCarousel7 from '../assets/images/carousel/7CARRETE.png'
+import imageCarousel8 from '../assets/images/carousel/8CARRETE.png'
+import imageCarousel9 from '../assets/images/carousel/9CARRETE.png'
+import imageCarousel10 from '../assets/images/carousel/10CARRETE.png'
+import imageCarousel11 from '../assets/images/carousel/11CARRETE.png'
+import imageCarousel12 from '../assets/images/carousel/12CARRETE.png'
+import imageCarousel14 from '../assets/images/carousel/14CARRETE.png'
+import imageCarousel15 from '../assets/images/carousel/15CARRETE.png'
+import imageCarousel16 from '../assets/images/carousel/16CARRETE.png'
+import imageCarousel17 from '../assets/images/carousel/17CARRETE.png'
+import imageCarousel18 from '../assets/images/carousel/18CARRETE.png'
+import imageCarousel20 from '../assets/images/carousel/20CARRETE.png'
+import imageCarousel21 from '../assets/images/carousel/21CARRETE.png'
+import imageCarousel23 from '../assets/images/carousel/23CARRETE.png'
+import imageCarousel24 from '../assets/images/carousel/24CARRETE.png'
 
 const NuestrosServicios = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -53,13 +67,26 @@ const NuestrosServicios = () => {
   }
 
   const sectors = [
-    'Agricultura',
-    'Ganadería / Producción pecuaria',
-    'Minería',
-    'Servicios empresariales',
-    'Industria / Manufactura',
-    'Construcción',
-    'Turismo y transporte'
+    'Maquinaria Industrial',
+    'Maquinaria Alimenticia',
+    'Maquinaria Industrial Plastica',
+    'Maquinaria Industrial Alimenticia',
+    'Equipos Medicos',
+    'Maquinaria Robotizacion Logistica',
+    'Equipo de Logistica',
+    'Maquinaria para Metalurgia',
+    'Maquinaria Industria Farmaceutica',
+    'Equipo Pecuaria',
+    'Equipo Industria Alimenticia',
+    'Transporte Logistico',
+    'Vehiculos Ejecutivos',
+    'Industria Energetica',
+    'Maquinaria Construccion',
+    'Maquinaria Agricola',
+    'Equipo Tecnologico',
+    'Bienes Inmuebles',
+    'Locales Comerciales y Oficinas',
+    'Otras Edificaciones'
   ]
 
   useEffect(() => {
@@ -197,20 +224,46 @@ const NuestrosServicios = () => {
                 key={currentSlide}
                 className="carousel-slide"
                 style={{
-                  backgroundImage: sectors[currentSlide] === 'Agricultura' 
-                    ? `url(${agriculture})` 
-                    : sectors[currentSlide] === 'Ganadería / Producción pecuaria'
-                    ? `url(${livestock})`
-                    : sectors[currentSlide] === 'Minería'
-                    ? `url(${mining})`
-                    : sectors[currentSlide] === 'Servicios empresariales'
-                    ? `url(${sectionBusiness})`
-                    : sectors[currentSlide] === 'Industria / Manufactura'
-                    ? `url(${manufacturing})`
-                    : sectors[currentSlide] === 'Construcción'
-                    ? `url(${construction})`
-                    : sectors[currentSlide] === 'Turismo y transporte'
-                    ? `url(${transport})`
+                  backgroundImage: sectors[currentSlide] === 'Maquinaria Industrial' 
+                    ? `url(${imageCarousel1})` 
+                    : sectors[currentSlide] === 'Maquinaria Alimenticia'
+                    ? `url(${imageCarousel2})`
+                    : sectors[currentSlide] === 'Maquinaria Industrial Plastica'
+                    ? `url(${imageCarousel3})`
+                    : sectors[currentSlide] === 'Maquinaria Industrial Alimenticia'
+                    ? `url(${imageCarousel4})`
+                    : sectors[currentSlide] === 'Equipos Medicos'
+                    ? `url(${imageCarousel5})`
+                    : sectors[currentSlide] === 'Maquinaria Robotizacion Logistica'
+                    ? `url(${imageCarousel7})`
+                    : sectors[currentSlide] === 'Equipo de Logistica'
+                    ? `url(${imageCarousel8})`
+                    : sectors[currentSlide] === 'Maquinaria para Metalurgia'
+                    ? `url(${imageCarousel9})`
+                    : sectors[currentSlide] === 'Maquinaria Industria Farmaceutica'
+                    ? `url(${imageCarousel10})`
+                    : sectors[currentSlide] === 'Equipo Pecuaria'
+                    ? `url(${imageCarousel11})`
+                    : sectors[currentSlide] === 'Equipo Industria Alimenticia'
+                    ? `url(${imageCarousel12})`
+                    : sectors[currentSlide] === 'Transporte Logistico'
+                    ? `url(${imageCarousel14})`
+                    : sectors[currentSlide] === 'Vehiculos Ejecutivos'
+                    ? `url(${imageCarousel15})`
+                    : sectors[currentSlide] === 'Industria Energetica'
+                    ? `url(${imageCarousel16})`
+                    : sectors[currentSlide] === 'Maquinaria Construccion'
+                    ? `url(${imageCarousel17})`
+                    : sectors[currentSlide] === 'Maquinaria Agricola'
+                    ? `url(${imageCarousel18})`
+                    : sectors[currentSlide] === 'Equipo Tecnologico'
+                    ? `url(${imageCarousel20})`
+                    : sectors[currentSlide] === 'Bienes Inmuebles'
+                    ? `url(${imageCarousel21})`
+                    : sectors[currentSlide] === 'Locales Comerciales y Oficinas'
+                    ? `url(${imageCarousel23})`
+                    : sectors[currentSlide] === 'Otras Edificaciones'
+                    ? `url(${imageCarousel24})`
                     : 'none',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center top',
