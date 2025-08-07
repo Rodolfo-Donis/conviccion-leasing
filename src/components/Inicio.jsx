@@ -107,7 +107,7 @@ const Inicio = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Cotiza ahora
+            Conoce más
           </motion.button>
           
           <motion.div
@@ -142,7 +142,7 @@ const Inicio = () => {
           className="cta-button-secondary"
           onClick={handleWhatsAppClick}
         >
-          Cotiza ahora
+          Conoce más
         </button>
       </div>
 
@@ -178,17 +178,11 @@ const Inicio = () => {
               animate={quienesInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p className="section-text">
-              Tu aliado en la adquisición de activos productivos a través de leasing.
-Expertos en diseñar soluciones de leasing que atiendan estrategias financieras-operativas para optimizar tus resultados económicos financieros.
-Apasionados por servirte con excelencia.
-              </p>
-              
-              <p className="section-text">
-                Nuestro compromiso es brindarte las mejores condiciones y un servicio 
-                personalizado que se adapte a las necesidades específicas de tu negocio, 
-                facilitando el acceso a tecnología y equipos de última generación.
-              </p>
+              <ul className="section-text">
+                <li>Tu aliado en la adquisición de activos productivos a través de leasing</li>
+                <li>Expertos en diseñar soluciones de leasing que atiendan estrategias financieras-operativas para optimizar tus resultados económicos financieros.</li>
+                <li>Apasionados por servirte con excelencia.</li>
+              </ul>
             </motion.div>
           </div>
         </div>

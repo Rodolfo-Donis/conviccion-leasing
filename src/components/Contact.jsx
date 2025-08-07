@@ -34,7 +34,7 @@ const Contact = () => {
 
   const handleWhatsAppContact = () => {
     const formMessage = encodeURIComponent(
-      `Hola, me interesa contactar con Convicción Leasing.\n\n` +
+      `Hola, solicito más información de sus servicios; proponer un par de horarios para una llamada\n\n` +
       `Nombre: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
       `Empresa: ${formData.company}\n` +
@@ -181,7 +181,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    placeholder="Empresa / Emprendimiento"
+                    placeholder="Empresa"
                     autoComplete="organization"
                   />
                 </div>

@@ -67,26 +67,26 @@ const NuestrosServicios = () => {
   }
 
   const sectors = [
-    'Maquinaria Industrial',
-    'Maquinaria Alimenticia',
-    'Maquinaria Industrial Plastica',
-    'Maquinaria Industrial Alimenticia',
-    'Equipos Medicos',
-    'Maquinaria Robotizacion Logistica',
-    'Equipo de Logistica',
-    'Maquinaria para Metalurgia',
-    'Maquinaria Industria Farmaceutica',
-    'Equipo Pecuaria',
-    'Equipo Industria Alimenticia',
-    'Transporte Logistico',
-    'Vehiculos Ejecutivos',
-    'Industria Energetica',
-    'Maquinaria Construccion',
-    'Maquinaria Agricola',
-    'Equipo Tecnologico',
-    'Bienes Inmuebles',
-    'Locales Comerciales y Oficinas',
-    'Otras Edificaciones'
+    'maquinaria industrial',
+    'maquinaria para la industria alimenticia',
+    'maquinaria para la industria plastica',
+    'maquinaria para la industria alimenticia',
+    'equipos medico y laboratorio',
+    'maquinaria para automatizacion',
+    'maquinaria y equipo de logistica',
+    'maquinaria para la industria metalurgica',
+    'maquinaria y equipo para la industria farmaceutica',
+    'equipo pecuaria',
+    'maquinaria para la industria alimenticia ',
+    'vehiculos y aditamentos para transporte de mercaderia',
+    'vehiculos ejecutivos y supervision',
+    'equipos para la industria energetica',
+    'equipos y maquinaria para la construccion',
+    'equipos y maquinaria agricola',
+    'equipo tecnologico',
+    'bienes inmuebles',
+    'locales comerciales y oficinas',
+    'otras edificaciones'
   ]
 
   useEffect(() => {
@@ -136,14 +136,7 @@ const NuestrosServicios = () => {
             >
               ¿Qué equipos utilizas en tu negocio?
             </motion.h2>
-            <motion.p 
-              className="section-description"
-              initial={{ opacity: 0, y: 30 }}
-              animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Te ayudamos a crecer con los activos productivos que tu empresa requiera.
-            </motion.p>
+           <br></br> <br></br>
             
             <motion.div 
               className="equipment-grid"
@@ -201,7 +194,7 @@ const NuestrosServicios = () => {
             animate={sectorsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-          En Conviccion Leasing adquirimos para ti los activos productivos que tu empresa requiera
+          En CONVICCIÓN LEASING adquirimos los activos productivos que tu empresa requiera
           </motion.h2>
           
           <motion.div 
@@ -224,45 +217,45 @@ const NuestrosServicios = () => {
                 key={currentSlide}
                 className="carousel-slide"
                 style={{
-                  backgroundImage: sectors[currentSlide] === 'Maquinaria Industrial' 
+                  backgroundImage: sectors[currentSlide] === 'maquinaria industrial' 
                     ? `url(${imageCarousel1})` 
-                    : sectors[currentSlide] === 'Maquinaria Alimenticia'
+                    : sectors[currentSlide] === 'maquinaria para la industria alimenticia'
                     ? `url(${imageCarousel2})`
-                    : sectors[currentSlide] === 'Maquinaria Industrial Plastica'
+                    : sectors[currentSlide] === 'maquinaria para la industria plastica'
                     ? `url(${imageCarousel3})`
-                    : sectors[currentSlide] === 'Maquinaria Industrial Alimenticia'
+                    : sectors[currentSlide] === 'maquinaria para la industrial alimenticia'
                     ? `url(${imageCarousel4})`
-                    : sectors[currentSlide] === 'Equipos Medicos'
+                    : sectors[currentSlide] === 'equipos medico y laboratorio'
                     ? `url(${imageCarousel5})`
-                    : sectors[currentSlide] === 'Maquinaria Robotizacion Logistica'
+                    : sectors[currentSlide] === 'maquinaria para automatizacion'
                     ? `url(${imageCarousel7})`
-                    : sectors[currentSlide] === 'Equipo de Logistica'
+                    : sectors[currentSlide] === 'maquinaria y equipo de logistica'
                     ? `url(${imageCarousel8})`
-                    : sectors[currentSlide] === 'Maquinaria para Metalurgia'
+                    : sectors[currentSlide] === 'maquinaria para la industria metalurgica'
                     ? `url(${imageCarousel9})`
-                    : sectors[currentSlide] === 'Maquinaria Industria Farmaceutica'
+                    : sectors[currentSlide] === 'maquinaria y equipo para la industria farmaceutica'
                     ? `url(${imageCarousel10})`
-                    : sectors[currentSlide] === 'Equipo Pecuaria'
+                    : sectors[currentSlide] === 'equipo pecuaria'
                     ? `url(${imageCarousel11})`
-                    : sectors[currentSlide] === 'Equipo Industria Alimenticia'
+                    : sectors[currentSlide] === 'maquinaria para la industria alimenticia '
                     ? `url(${imageCarousel12})`
-                    : sectors[currentSlide] === 'Transporte Logistico'
+                    : sectors[currentSlide] === 'vehiculos y aditamentos para transporte de mercaderia'
                     ? `url(${imageCarousel14})`
-                    : sectors[currentSlide] === 'Vehiculos Ejecutivos'
+                    : sectors[currentSlide] === 'vehiculos ejecutivos y supervision'
                     ? `url(${imageCarousel15})`
-                    : sectors[currentSlide] === 'Industria Energetica'
+                    : sectors[currentSlide] === 'equipos para la industria energetica'
                     ? `url(${imageCarousel16})`
-                    : sectors[currentSlide] === 'Maquinaria Construccion'
+                    : sectors[currentSlide] === 'equipos y maquinaria para la construccion'
                     ? `url(${imageCarousel17})`
-                    : sectors[currentSlide] === 'Maquinaria Agricola'
+                    : sectors[currentSlide] === 'equipos y maquinaria agricola'
                     ? `url(${imageCarousel18})`
-                    : sectors[currentSlide] === 'Equipo Tecnologico'
+                    : sectors[currentSlide] === 'equipo tecnologico'
                     ? `url(${imageCarousel20})`
-                    : sectors[currentSlide] === 'Bienes Inmuebles'
+                    : sectors[currentSlide] === 'bienes inmuebles'
                     ? `url(${imageCarousel21})`
-                    : sectors[currentSlide] === 'Locales Comerciales y Oficinas'
+                    : sectors[currentSlide] === 'locales comerciales y oficinas'
                     ? `url(${imageCarousel23})`
-                    : sectors[currentSlide] === 'Otras Edificaciones'
+                    : sectors[currentSlide] === 'otras edificaciones'
                     ? `url(${imageCarousel24})`
                     : 'none',
                   backgroundSize: 'cover',
@@ -316,7 +309,7 @@ const NuestrosServicios = () => {
             animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            ¿Por qué adquirir activos productivos con Convicción Leasing?
+            ¿Por qué adquirir activos productivos con CONVICCIÓN LEASING?
           </motion.h2>
           <motion.p 
             className="section-subtitle"
@@ -355,9 +348,9 @@ const NuestrosServicios = () => {
             whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(242, 164, 59, 0.3)" }}
             whileTap={{ scale: 0.95 }}
             onClick={handleWhatsAppClick}
-          >
-            Cotiza tu equipo hoy mismo
-          </motion.button>
+                      >
+             cotiza el leasing para tus equipos hoy mismo
+            </motion.button>
         </div>
       </div>
     </section>

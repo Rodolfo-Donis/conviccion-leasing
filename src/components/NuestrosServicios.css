@@ -805,7 +805,7 @@
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(242, 164, 59, 0.3);
   transition: all var(--transition-normal);
-  text-transform: capitalize;
+  text-transform: lowercase;
   letter-spacing: 0.5px;
 }
 .cta-button:hover {

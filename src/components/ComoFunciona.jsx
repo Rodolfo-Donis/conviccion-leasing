@@ -140,12 +140,12 @@ const ComoFunciona = () => {
             <div 
               className={`que-es-leasing-description ${section1InView ? 'scroll-animate' : ''}`}
             >
-              <p>{sections.queEsLeasing.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: sections.queEsLeasing.description }}></p>
             </div>
           </div>
         </div>
 
-        {/* Sección 2: Tipos de Leasing */}
+        {/* Sección 2: Nuestros Servicios */}
         <div 
           ref={section2Ref}
           className={`tipos-leasing ${section2InView ? 'scroll-animate' : ''}`}

@@ -21,16 +21,16 @@ export const COMO_FUNCIONA_CONTENT = {
   subtitle: '',
   sections: {
     queEsLeasing: {
-      title: '¿Qué es el Leasing?',
-      description: 'Es la solución financiera que permite a tu empresa el uso, goce y explotación de maquinaria, equipos, y/o bienes productivos sin realizar el desembolso que representa la compra, obteniendo beneficios financieros y operativos. Convicción leasing, los adquiere y pone a tu disposición por el pago de cuotas durante el plazo convenido a través de la suscripción del contrato de leasing.'
+      title: '¿Qué es leasing?',
+      description: 'Es la solución financiera que permite a tu empresa el uso, goce y explotación de maquinaria, equipos, y/o bienes productivos sin realizar el desembolso que representa la compra, obteniendo beneficios financieros y operativos.<br><br>CONVICCIÓN LEASING, los adquiere y pone a tu disposición por el pago de cuotas durante el plazo convenido a través de la suscripción del contrato de leasing.'
     },
     tiposLeasing: {
-      title: 'Tipos de Leasing',
+      title: 'Nuestros Servicios',
       tabs: [
         {
           id: 'financiero',
           name: 'Leasing Financiero',
-          description: 'Brinda al cliente la financiación de los equipos requeridos y los beneficios financieros-operativas que el esquema de leasing ofrece; al finalizar el plazo el cliente tendrá la propiedad de los equipos a través del pago de la Opción a Compra, contractualmente convenida desde el inicio.',
+          description: 'Brinda al cliente la financiación de los equipos requeridos y los beneficios financieros-operativos que el esquema de leasing ofrece; al finalizar el plazo el cliente tendrá la propiedad de los equipos a través del pago de la opción a compra, contractualmente convenida desde el inicio.',
           
         },
         {
@@ -48,7 +48,7 @@ export const COMO_FUNCIONA_CONTENT = {
       ]
     },
     pasos: {
-      title: 'Pasos para adquirir tus equipos en convicción leasing',
+      title: 'Pasos para adquirir tus equipos en CONVICCIÓN LEASING',
       steps: [
         {
           number: '1',
