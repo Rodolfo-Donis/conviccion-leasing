@@ -107,7 +107,7 @@ const Inicio = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Conoce más
+            conoce más
           </motion.button>
           
           <motion.div
