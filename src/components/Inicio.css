@@ -917,6 +917,7 @@
   .valores-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-sm);
+    padding-top: var(--spacing-2xl);
   }
   
   .valor-card {
@@ -1018,20 +1019,28 @@
   }
   
   .valores-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--spacing-xs);
+    padding: var(--spacing-xl) var(--spacing-sm) 0 var(--spacing-sm);
   }
   
   .valor-card {
-    height: 150px;
+    height: 120px;
+    min-width: 60px;
   }
   
   .valor-letter {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+  }
+  
+  .valor-icon {
+    width: 40px;
+    height: 40px;
   }
   
   .valor-meaning {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs);
   }
   
   .social-button {
@@ -1050,5 +1059,33 @@
   
   .container {
     padding: 0 var(--spacing-sm);
+  }
+}
+
+/* Extra small screens to ensure all 5 letters are visible */
+@media (max-width: 360px) {
+  .valores-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    padding: 16px 8px 0 8px;
+  }
+  
+  .valor-card {
+    height: 100px;
+    min-width: 50px;
+  }
+  
+  .valor-letter {
+    font-size: var(--font-size-xl);
+  }
+  
+  .valor-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .valor-meaning {
+    font-size: var(--font-size-xs);
+    padding: 4px;
   }
 } 
