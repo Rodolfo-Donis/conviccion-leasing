@@ -582,9 +582,16 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Nuestra Misión Section with Image */
-.mision {
+/* Mision y Vision Container */
+.mision-vision-container {
+  display: flex;
+  width: 100%;
   background: #d4f0f6;
+}
+
+.mision,
+.vision {
+  flex: 1;
   padding: var(--spacing-3xl) 0;
   opacity: 0;
   transform: translateY(50px);
@@ -593,9 +600,18 @@
   overflow: hidden;
 }
 
-.mision.scroll-animate {
+.mision.scroll-animate,
+.vision.scroll-animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+.mision {
+  background: #d4f0f6;
+}
+
+.vision {
+  background: #f8f9fa;
 }
 
 .mision-content {
@@ -604,6 +620,34 @@
   gap: var(--spacing-2xl);
   align-items: center;
   margin-top: var(--spacing-2xl);
+}
+
+.vision-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  margin-top: var(--spacing-2xl);
+}
+
+.vision-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.vision-text .section-text {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  color: var(--color-dark-gray);
+  margin: 0;
+  text-align: left;
+}
+
+.vision-text .section-text:first-child {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-blue);
+  font-size: var(--font-size-xl);
 }
 
 .mision-image {
@@ -665,50 +709,6 @@
 
 .mision.scroll-animate::before {
   transform: translate(-50%, -50%) scale(1);
-}
-
-/* Nuestra Visión Section with Image */
-.vision {
-  background: #f8f9fa;
-  padding: var(--spacing-3xl) 0;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.2s ease-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.vision.scroll-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.vision-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
-  margin-top: var(--spacing-2xl);
-}
-
-.vision-text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.vision-text .section-text {
-  font-size: var(--font-size-lg);
-  line-height: 1.7;
-  color: var(--color-dark-gray);
-  margin: 0;
-  text-align: left;
-}
-
-.vision-text .section-text:first-child {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-dark-blue);
-  font-size: var(--font-size-xl);
 }
 
 .vision-image {
@@ -821,6 +821,16 @@
 }
 
 @media (max-width: 768px) {
+  .mision-vision-container {
+    flex-direction: column;
+  }
+  
+  .mision,
+  .vision {
+    flex: none;
+    width: 100%;
+  }
+  
   .hero-banner {
     min-height: 80vh;
   }

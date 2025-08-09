@@ -188,86 +188,6 @@ const Inicio = () => {
         </div>
       </div>
 
-      {/* Nuestra Misión */}
-      <div className={`mision ${misionInView ? 'scroll-animate' : ''}`} ref={misionRef}>
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={misionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Nuestra Misión
-          </motion.h2>
-          
-          <div className="mision-content">
-            <motion.div
-              className="mision-image"
-              initial={{ opacity: 0, x: -50 }}
-              animate={misionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <img 
-                src={missionArrow} 
-                alt="Nuestra Misión - Convicción Leasing" 
-                className="mision-img"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="mision-text"
-              initial={{ opacity: 0, x: 50 }}
-              animate={misionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <p className="section-text">
-                Contribuir a elevar el potencial productivo de nuestros clientes a través de soluciones eficientes de leasing agregando valor a sus estrategias financieras-operativas.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Nuestra Visión */}
-      <div className={`vision ${visionInView ? 'scroll-animate' : ''}`} ref={visionRef}>
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={visionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Nuestra Visión
-          </motion.h2>
-          
-          <div className="vision-content">
-            <motion.div
-              className="vision-image"
-              initial={{ opacity: 0, x: -50 }}
-              animate={visionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <img 
-                src={vision} 
-                alt="Nuestra Visión - Convicción Leasing" 
-                className="vision-img"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="vision-text"
-              initial={{ opacity: 0, x: 50 }}
-              animate={visionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <p className="section-text">
-                Ser reconocidos en el mercado como empresa de LEASING referente por el desarrollo de relaciones responsables, colaborativas y transparentes. Trascender en el mercado viviendo nuestros valores ELEVA.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
       {/* Nuestros Valores Title */}
       <div className="valores-title-section">
         <div className="container">
@@ -330,6 +250,89 @@ const Inicio = () => {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </div>
+
+      {/* Nuestra Misión y Visión */}
+      <div className="mision-vision-container">
+        {/* Nuestra Misión */}
+        <div className={`mision ${misionInView ? 'scroll-animate' : ''}`} ref={misionRef}>
+          <div className="container">
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={misionInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Nuestra Misión
+            </motion.h2>
+            
+            <div className="mision-content">
+              <motion.div
+                className="mision-image"
+                initial={{ opacity: 0, x: -50 }}
+                animate={misionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <img 
+                  src={missionArrow} 
+                  alt="Nuestra Misión - Convicción Leasing" 
+                  className="mision-img"
+                />
+              </motion.div>
+              
+              <motion.div
+                className="mision-text"
+                initial={{ opacity: 0, x: 50 }}
+                animate={misionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <p className="section-text">
+                  Contribuir a elevar el potencial productivo de nuestros clientes a través de soluciones eficientes de leasing agregando valor a sus estrategias financieras-operativas.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Nuestra Visión */}
+        <div className={`vision ${visionInView ? 'scroll-animate' : ''}`} ref={visionRef}>
+          <div className="container">
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={visionInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Nuestra Visión
+            </motion.h2>
+            
+            <div className="vision-content">
+              <motion.div
+                className="vision-image"
+                initial={{ opacity: 0, x: -50 }}
+                animate={visionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <img 
+                  src={vision} 
+                  alt="Nuestra Visión - Convicción Leasing" 
+                  className="vision-img"
+                />
+              </motion.div>
+              
+              <motion.div
+                className="vision-text"
+                initial={{ opacity: 0, x: 50 }}
+                animate={visionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <p className="section-text">
+                  Ser reconocidos en el mercado como empresa de LEASING referente por el desarrollo de relaciones responsables, colaborativas y transparentes. Trascender en el mercado viviendo nuestros valores ELEVA.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
 
