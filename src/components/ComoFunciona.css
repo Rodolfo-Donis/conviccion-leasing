@@ -388,13 +388,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: var(--spacing-3xl);
+  margin-top: var(--spacing-lg);
   padding: 0 var(--spacing-lg);
 }
 
 .pasos-image {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
   height: auto;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);

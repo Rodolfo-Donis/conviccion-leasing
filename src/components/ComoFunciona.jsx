@@ -6,7 +6,7 @@ import './ComoFunciona.css'
 import leasingFinanciero from '../assets/images/leasin-1.png'
 import leasingOperativo from '../assets/images/leasin-2.png'
 import leasingSellback from '../assets/images/leasin-3.png'
-import pasosLeasin from '../assets/images/pasos-leasin.png'
+import pasosLeasin from '../assets/images/pasos imagen.png'
 
 const ComoFunciona = () => {
   const [ref, inView] = useInView({
@@ -220,7 +220,7 @@ const ComoFunciona = () => {
           ref={section3Ref}
           className={`pasos-adquirir ${section3InView ? 'scroll-animate' : ''}`}
         >
-          <h3 className="text-center">{sections.pasos.title}</h3>
+          {/* <h3 className="text-center">{sections.pasos.title}</h3> */}
 
           <motion.div
             className="pasos-image-container"
