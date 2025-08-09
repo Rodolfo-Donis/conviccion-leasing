@@ -47,6 +47,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
   --transition-fast: 0.15s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
@@ -600,9 +601,31 @@
 .mision-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
+  gap: var(--spacing-2xl);
   align-items: center;
   margin-top: var(--spacing-2xl);
+}
+
+.mision-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mision-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.mision-img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
 }
 
 .mision-text {
@@ -623,29 +646,6 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-dark-blue);
   font-size: var(--font-size-xl);
-}
-
-.mision-image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mision-img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: var(--border-radius-lg);
- 
-  transition: all var(--transition-normal);
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-}
-
-.mision-img:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-xl);
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
 }
 
 /* Background decoration for mision */
@@ -929,14 +929,14 @@
   }
   
   .valor-meaning {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-sm);
   }
   
+  /* Combined Mission and Vision Responsive */
+
+  
   .social-media {
-    justify-content: center;
-    align-items: center;
-    margin-top: var(--spacing-md);
-    align-self: center;
+    margin-top: var(--spacing-xl);
   }
 }
 
@@ -1043,10 +1043,12 @@
     padding: var(--spacing-xs);
   }
   
+
+  
   .social-button {
     width: 40px;
     height: 40px;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
   }
   
   .social-media {
@@ -1088,4 +1090,6 @@
     font-size: var(--font-size-xs);
     padding: 4px;
   }
+  
+
 } 

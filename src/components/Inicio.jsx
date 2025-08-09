@@ -208,7 +208,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                                  src={missionArrow} 
+                src={missionArrow} 
                 alt="Nuestra Misión - Convicción Leasing" 
                 className="mision-img"
               />
@@ -221,15 +221,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="section-text">
-                Facilitar el acceso a tecnología y equipos de alta calidad para que las 
-                empresas puedan optimizar sus operaciones y aumentar su competitividad 
-                en el mercado, contribuyendo al desarrollo económico del país.
-              </p>
-              
-              <p className="section-text">
-                Nos comprometemos a brindar soluciones financieras innovadoras que 
-                permitan a nuestros clientes acceder a los recursos necesarios para 
-                crecer y expandir sus operaciones de manera sostenible.
+                Contribuir a elevar el potencial productivo de nuestros clientes a través de soluciones eficientes de leasing agregando valor a sus estrategias financieras-operativas.
               </p>
             </motion.div>
           </div>
@@ -256,7 +248,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img 
-                                  src={vision} 
+                src={vision} 
                 alt="Nuestra Visión - Convicción Leasing" 
                 className="vision-img"
               />
@@ -269,15 +261,7 @@ const Inicio = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="section-text">
-                Ser la empresa líder en soluciones de leasing en Guatemala, reconocida 
-                por nuestra innovación, transparencia y compromiso con el éxito de 
-                nuestros clientes, contribuyendo al desarrollo sostenible del sector empresarial.
-              </p>
-              
-              <p className="section-text">
-                Aspiramos a ser el referente en el mercado financiero guatemalteco, 
-                destacando por nuestra excelencia en el servicio, innovación constante 
-                y contribución al crecimiento económico del país.
+                Ser reconocidos en el mercado como empresa de LEASING referente por el desarrollo de relaciones responsables, colaborativas y transparentes. Trascender en el mercado viviendo nuestros valores ELEVA.
               </p>
             </motion.div>
           </div>
