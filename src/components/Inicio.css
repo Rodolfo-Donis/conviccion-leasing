@@ -960,6 +960,7 @@
   .hero-subtitle {
     font-size: var(--font-size-sm);
     white-space: normal;
+    text-align: left;
   }
   
   .section-title {
