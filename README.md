@@ -1,4 +1,4 @@
-# conviccion Leasing - Modern Leasing Company SPA
+# Convicción Leasing - Modern Leasing Company SPA
 
 A modern, responsive Single Page Application (SPA) for a leasing company built with React, Vite, and Framer Motion. Features beautiful animations, contact form functionality, light/dark theme switching, and a professional design.
 

@@ -93,7 +93,7 @@ export const HISTORY_CONTENT = {
     {
       year: '2008',
       title: 'Company Founded',
-      description: 'conviccion Leasing was established with a vision to revolutionize the leasing industry by providing flexible, customer-centric solutions.',
+      description: 'Convicción Leasing was established with a vision to revolutionize the leasing industry by providing flexible, customer-centric solutions.',
       icon: '🏢'
     },
     {
@@ -224,7 +224,7 @@ export const FOOTER_CONTENT = {
 
 // Navigation Content
 export const NAV_CONTENT = {
-  logo: 'conviccion Leasing',
+  logo: 'Convicción Leasing',
   items: [
     { id: 'como-funciona', label: 'Cómo Funciona' },
     { id: 'history', label: 'History' },
@@ -234,14 +234,14 @@ export const NAV_CONTENT = {
 
 // Meta Content
 export const META_CONTENT = {
-  title: 'conviccion Leasing - Professional Leasing Solutions',
+  title: 'Convicción Leasing - Professional Leasing Solutions',
   description: 'Professional leasing solutions for businesses and individuals. Discover our history and get in touch for more information.',
   keywords: 'leasing, equipment leasing, vehicle leasing, business leasing, commercial leasing, financial solutions',
-  author: 'conviccion Leasing',
-  ogTitle: 'conviccion Leasing - Professional Leasing Solutions',
+  author: 'Convicción Leasing',
+  ogTitle: 'Convicción Leasing - Professional Leasing Solutions',
   ogDescription: 'Professional leasing solutions for businesses and individuals. From equipment to vehicles, we provide tailored solutions that drive your success.',
   ogImage: '/og-image.jpg',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'conviccion Leasing - Professional Leasing Solutions',
+  twitterTitle: 'Convicción Leasing - Professional Leasing Solutions',
   twitterDescription: 'Professional leasing solutions for businesses and individuals.'
 }; 

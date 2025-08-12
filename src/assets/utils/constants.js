@@ -4,7 +4,7 @@
 
 // Company Information
 export const COMPANY_INFO = {
-  name: 'conviccion Leasing',
+  name: 'Convicción Leasing',
   tagline: 'Professional Leasing Solutions',
   description: 'Empowering businesses and individuals with flexible, reliable leasing options.',
   founded: 2008,
@@ -127,10 +127,10 @@ export const EMAIL_CONFIG = {
 
 // SEO Configuration
 export const SEO_CONFIG = {
-  title: 'conviccion Leasing - Professional Leasing Solutions',
+  title: 'Convicción Leasing - Professional Leasing Solutions',
   description: 'Professional leasing solutions for businesses and individuals. From equipment to vehicles, we provide tailored solutions that drive your success.',
   keywords: 'leasing, equipment leasing, vehicle leasing, business leasing, commercial leasing',
-  author: 'conviccion Leasing',
+  author: 'Convicción Leasing',
   ogImage: '/og-image.jpg',
   twitterCard: 'summary_large_image'
 };
@@ -157,7 +157,7 @@ export const TIMELINE_DATA = [
   {
     year: '2008',
     title: 'Company Founded',
-    description: 'conviccion Leasing was established with a vision to revolutionize the leasing industry.',
+    description: 'Convicción Leasing was established with a vision to revolutionize the leasing industry.',
     icon: '🏢'
   },
   {
