@@ -65,7 +65,7 @@ const Header = () => {
                 className="nav-link" 
                 onClick={() => scrollToSection('como-funciona')}
               >
-                Cómo funciona
+                Servicios
               </button>
             </li>
             <li>
@@ -73,7 +73,7 @@ const Header = () => {
                 className="nav-link" 
                 onClick={() => scrollToSection('nuestros-servicios')}
               >
-                Servicios
+                Cómo funciona
               </button>
             </li>
             <li>

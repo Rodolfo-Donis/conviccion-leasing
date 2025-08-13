@@ -21,8 +21,8 @@ const Footer = () => {
           <div className="footer-links-block">
             <ul className="footer-main-links">
               <li>• Inicio</li>
-              <li>• Cómo funciona</li>
               <li>• Servicios</li>
+              <li>• Cómo funciona</li>
               <li>• Contáctanos</li>
             </ul>
           </div>
