@@ -143,6 +143,19 @@
   white-space: nowrap;
 }
 
+/* Web responsive - Add more padding top for larger screens */
+@media (min-width: 1024px) {
+  .hero-title {
+    padding-top: var(--spacing-3xl);
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-title {
+    padding-top: var(--spacing-4xl);
+  }
+}
+
 .hero-subtitle {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-regular);
