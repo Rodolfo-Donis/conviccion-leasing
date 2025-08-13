@@ -1097,4 +1097,124 @@
   .pyramid-image {
     max-width: 98vw;
   }
+}
+
+/* Pasos para adquirir equipos Section Styles */
+.pasos-adquirir {
+  background: var(--color-light-gray);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  width: 100%;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.pasos-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
+  overflow: visible;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.pasos-image {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  object-fit: contain;
+  display: block;
+  max-height: none;
+}
+
+.pasos-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Mobile-first responsive styles for pasos image */
+@media (max-width: 1024px) {
+  .pasos-image-container {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .pasos-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pasos-image-container {
+    padding: 0 var(--spacing-md);
+    margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: visible;
+  }
+  
+  .pasos-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pasos-image-container {
+    padding: 0 var(--spacing-sm);
+    margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: visible;
+  }
+  
+  .pasos-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    max-height: none !important;
+    border-radius: var(--border-radius-md);
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .pasos-image-container {
+    padding: 0 var(--spacing-xs);
+    margin: 0;
+    overflow: visible;
+  }
+  
+  .pasos-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .pasos-image-container {
+    padding: 0 var(--spacing-xs);
+    margin: 0;
+  }
+  
+  .pasos-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: var(--border-radius-sm);
+  }
 } 

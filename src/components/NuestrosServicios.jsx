@@ -12,6 +12,7 @@ import location from '../assets/images/location.jpg'
 import vehiculo from '../assets/images/vehiculo-fondo.png'
 import paneles from '../assets/images/panel-fondo.png'
 import piramide2 from '../assets/images/piramide2.png'
+import pasosLeasin from '../assets/images/pasos imagen.png'
 
 import imageCarousel1 from '../assets/images/carousel/1CARRETE.png'
 import imageCarousel2 from '../assets/images/carousel/2CARRETE.png'
@@ -338,9 +339,23 @@ const NuestrosServicios = () => {
             />
           </motion.div>
         </div>
-
-        {/* Call to Action */}
-        <div className={`cta-section ${ctaInView ? 'scroll-animate' : ''}`} ref={ctaRef}>
+        {/* Pasos para adquirir equipos Section */}
+        <div className="pasos-adquirir">
+          <motion.div
+            className="pasos-image-container"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <img 
+              src={pasosLeasin} 
+              alt="Pasos para adquirir leasing"
+              className="pasos-image"
+            />
+          </motion.div>
+        </div>
+         {/* Call to Action */}
+         <div className={`cta-section ${ctaInView ? 'scroll-animate' : ''}`} ref={ctaRef}>
           <motion.button
             className="cta-button"
             initial={{ opacity: 0, y: 30 }}

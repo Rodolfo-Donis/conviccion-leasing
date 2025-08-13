@@ -6,7 +6,6 @@ import './ComoFunciona.css'
 import leasingFinanciero from '../assets/images/leasin-1.png'
 import leasingOperativo from '../assets/images/leasin-2.png'
 import leasingSellback from '../assets/images/leasin-3.png'
-import pasosLeasin from '../assets/images/pasos imagen.png'
 
 const ComoFunciona = () => {
   const [ref, inView] = useInView({
@@ -20,14 +19,12 @@ const ComoFunciona = () => {
   const headerRef = useRef(null)
   const section1Ref = useRef(null)
   const section2Ref = useRef(null)
-  const section3Ref = useRef(null)
   const textRef = useRef(null)
   
   // State for scroll animations
   const [headerInView, setHeaderInView] = useState(false)
   const [section1InView, setSection1InView] = useState(false)
   const [section2InView, setSection2InView] = useState(false)
-  const [section3InView, setSection3InView] = useState(false)
 
   const { sections } = COMO_FUNCIONA_CONTENT
 
@@ -74,18 +71,7 @@ const ComoFunciona = () => {
       }
     )
 
-    // Section 3 animation observer
-    const section3Observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setSection3InView(true)
-        }
-      },
-      {
-        threshold: 0.2,
-        triggerOnce: true
-      }
-    )
+
 
     // Observe elements
     if (headerRef.current) {
@@ -100,10 +86,7 @@ const ComoFunciona = () => {
       section2Observer.observe(section2Ref.current)
       observers.push(section2Observer)
     }
-    if (section3Ref.current) {
-      section3Observer.observe(section3Ref.current)
-      observers.push(section3Observer)
-    }
+
 
     return () => {
       observers.forEach(observer => {
@@ -215,26 +198,7 @@ const ComoFunciona = () => {
           </div>
         </div>
 
-        {/* Sección 3: Pasos para adquirir equipos */}
-        <div 
-          ref={section3Ref}
-          className={`pasos-adquirir ${section3InView ? 'scroll-animate' : ''}`}
-        >
-          {/* <h3 className="text-center">{sections.pasos.title}</h3> */}
 
-          <motion.div
-            className="pasos-image-container"
-            initial={{ opacity: 0, y: 30 }}
-            animate={section3InView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <img 
-              src={pasosLeasin} 
-              alt="Pasos para adquirir leasing"
-              className="pasos-image"
-            />
-          </motion.div>
-        </div>
       </div>
     </section>
   )

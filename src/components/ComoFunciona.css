@@ -1,20 +1,6 @@
 /* ComoFunciona Component Styles - Matching the image design */
 
-/* Mobile-first image styles to ensure full visibility */
-.pasos-image-container {
-  overflow: visible;
-  width: 100%;
-  max-width: 100vw;
-}
 
-.pasos-image {
-  max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  display: block !important;
-  max-height: none !important;
-}
 
 .como-funciona {
   padding: var(--section-padding);
@@ -389,207 +375,25 @@
   line-height: 1.8;
 }
 
-/* Sección 3: Pasos para adquirir equipos - Fade Animation */
-.pasos-adquirir {
-  background: var(--background-light);
-  padding: var(--section-padding) 0;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.2s ease-out;
-  overflow: visible;
-  width: 100%;
-}
 
-.pasos-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: var(--spacing-lg);
-  padding: 0 var(--spacing-lg);
-  overflow: hidden;
-  width: 100%;
-}
 
-.pasos-image {
-  width: 100%;
-  max-width: 1400px;
-  height: auto;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-normal);
-  object-fit: contain;
-  display: block;
-  max-height: none;
-}
 
-.pasos-image:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-xl);
-}
 
-.pasos-adquirir.scroll-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-.pasos-adquirir h3 {
-  font-size: var(--font-size-4xl);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-3xl);
-  font-weight: 700;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out 0.3s;
-}
 
-.pasos-adquirir.scroll-animate h3 {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-.pasos-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-2xl);
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out 0.5s;
-}
 
-.pasos-adquirir.scroll-animate .pasos-container {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-.paso-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  background: var(--background-white);
-  padding: var(--spacing-2xl);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  cursor: pointer;
-  overflow: hidden;
-}
 
-/* Beautiful and modern hover animations for paso-item */
-.paso-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(30, 64, 175, 0.1), transparent);
-  transition: left var(--transition-slow);
-  z-index: 1;
-}
 
-.paso-item:hover::before {
-  left: 100%;
-}
 
-.paso-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, var(--background-white) 0%, rgba(219, 234, 254, 0.3) 100%);
-}
 
-.paso-item:hover .paso-number {
-  transform: scale(1.1) rotate(5deg);
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  box-shadow: var(--shadow-lg);
-}
 
-.paso-item:hover .paso-icon {
-  transform: scale(1.2) rotate(10deg);
-  color: var(--secondary-color);
-}
 
-.paso-item:hover .paso-content h4 {
-  color: var(--primary-color);
-  transform: translateY(-2px);
-}
 
-.paso-item:hover .paso-content p {
-  color: var(--text-primary);
-}
 
-.paso-number {
-  width: 80px;
-  height: 80px;
-  background: var(--primary-color);
-  color: var(--text-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  position: relative;
-  z-index: 2;
-}
 
-.paso-icon {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-md);
-  color: var(--text-primary);
-  transition: all var(--transition-normal);
-  position: relative;
-  z-index: 2;
-}
 
-.paso-content {
-  position: relative;
-  z-index: 2;
-  transition: all var(--transition-normal);
-}
-
-.paso-content h4 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
-  font-weight: 600;
-  transition: all var(--transition-normal);
-}
-
-.paso-content p {
-  font-size: var(--font-size-md);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  transition: all var(--transition-normal);
-}
-
-.paso-arrow {
-  position: absolute;
-  top: 40px;
-  right: -1rem;
-  font-size: var(--font-size-2xl);
-  color: var(--primary-color);
-  font-weight: bold;
-  z-index: 2;
-  transition: all var(--transition-normal);
-}
-
-.paso-item:hover .paso-arrow {
-  transform: translateX(5px) scale(1.1);
-  color: var(--secondary-color);
-}
 
 /* Image Placeholder Styles */
 .image-placeholder {
@@ -639,24 +443,7 @@
     gap: var(--spacing-2xl);
   }
   
-  .pasos-container {
-    flex-direction: column;
-    gap: var(--spacing-3xl);
-  }
-  
-  .paso-arrow {
-    display: none;
-  }
-  
-  /* Ensure image is fully visible on tablets */
-  .pasos-image-container {
-    padding: 0 var(--spacing-lg);
-  }
-  
-  .pasos-image {
-    max-width: 100%;
-    height: auto;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -667,8 +454,7 @@
   }
   
   .que-es-leasing-title h3,
-  .tipos-leasing h3,
-  .pasos-adquirir h3 {
+  .tipos-leasing h3 {
     font-size: var(--font-size-3xl);
   }
   
@@ -688,32 +474,7 @@
     padding: var(--spacing-2xl);
   }
   
-  .paso-item {
-    margin-bottom: var(--spacing-2xl);
-  }
-  
-  /* Adjust hover effects for mobile */
-  .paso-item:hover {
-    transform: translateY(-4px) scale(1.01);
-  }
-  
-  /* Ensure image is fully visible on mobile */
-  .pasos-image-container {
-    padding: 0 var(--spacing-md);
-    margin: 0;
-    width: 100%;
-    max-width: 100vw;
-    overflow: visible;
-  }
-  
-  .pasos-image {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
-    max-height: none !important;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -726,8 +487,7 @@
   }
   
   .que-es-leasing-title h3,
-  .tipos-leasing h3,
-  .pasos-adquirir h3 {
+  .tipos-leasing h3 {
     font-size: var(--font-size-2xl);
   }
   
@@ -735,65 +495,10 @@
     padding: var(--spacing-xl);
   }
   
-  .paso-number {
-    width: 60px;
-    height: 60px;
-    font-size: var(--font-size-2xl);
-  }
-  
-  /* Reduce hover effects for smaller screens */
-  .paso-item:hover {
-    transform: translateY(-2px) scale(1.005);
-  }
-  
-  /* Ensure image is fully visible on very small screens */
-  .pasos-image-container {
-    padding: 0 var(--spacing-sm);
-    margin: 0;
-    width: 100%;
-    max-width: 100vw;
-  }
-  
-  .pasos-image {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: var(--border-radius-md);
-  }
+
 }
 
-/* Additional mobile landscape and small screen optimizations */
-@media (max-width: 480px) and (orientation: landscape) {
-  .pasos-image-container {
-    padding: 0 var(--spacing-xs);
-    margin: 0;
-    overflow: visible;
-  }
-  
-  .pasos-image {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    max-height: none !important;
-  }
-}
 
-@media (max-width: 360px) {
-  .pasos-image-container {
-    padding: 0 var(--spacing-xs);
-    margin: 0;
-  }
-  
-  .pasos-image {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-sm);
-  }
-}
 
 /* Section Ending Animation */
 .como-funciona::after {
