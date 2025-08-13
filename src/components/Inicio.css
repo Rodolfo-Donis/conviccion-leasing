@@ -308,13 +308,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.2s ease-out;
   position: relative;
   overflow: hidden;
-  height: 490px;
+  min-height: 490px;
 }
 
 .valores.scroll-animate {
@@ -353,7 +353,7 @@
   gap: var(--spacing-3xl);
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: var(--spacing-xl);
+  padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
   position: relative;
   z-index: 1;
 }

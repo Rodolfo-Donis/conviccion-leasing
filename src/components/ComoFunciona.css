@@ -3,7 +3,7 @@
 
 
 .como-funciona {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-lg) 0 var(--spacing-3xl) 0;
   background: var(--background-light);
   position: relative;
   overflow: hidden;
@@ -51,7 +51,7 @@
 
 /* Sección 1: Qué es el Leasing - Modern Scroll Animations */
 .que-es-leasing {
-  margin-bottom: var(--spacing-5xl);
+  margin-bottom: var(--spacing-2xl);
   position: relative;
   padding: var(--spacing-xl) 0 var(--spacing-2xl) 0;
   background-image: url('../assets/images/tractor.png');
@@ -202,13 +202,13 @@
 
 /* Sección 2: Nuestros Servicios - Fade Animation */
 .tipos-leasing {
-  margin-top: 200px;
-  margin-bottom: var(--spacing-9xl);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
   background-image: url('../assets/images/impresora.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 100px 0 var(--spacing-8xl) 0;
+  padding: var(--spacing-2xl) 0 var(--spacing-3xl) 0;
   position: relative;
   z-index: 1;
   opacity: 0;
