@@ -3,7 +3,7 @@
 
 
 .como-funciona {
-  padding: var(--section-padding);
+  padding: var(--spacing-3xl) 0;
   background: var(--background-light);
   position: relative;
   overflow: hidden;

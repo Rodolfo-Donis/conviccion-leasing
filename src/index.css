@@ -64,7 +64,6 @@
   --font-family-heading: var(--font-family-primary);
   --font-family-body: var(--font-family-primary);
   --container-max-width: 1200px;
-  --section-padding: 6rem 0;
 }
 
 /* Base Styles */
@@ -96,7 +95,6 @@ body {
 }
 
 section {
-  padding: var(--section-padding);
   position: relative;
   overflow: hidden;
 }
@@ -219,7 +217,6 @@ button {
     --font-size-4xl: 2rem;
     --font-size-3xl: 1.75rem;
     --font-size-2xl: 1.375rem;
-    --section-padding: 4rem 0;
   }
 
   .container {
@@ -243,7 +240,6 @@ button {
     --font-size-5xl: 2rem;
     --font-size-4xl: 1.75rem;
     --font-size-3xl: 1.5rem;
-    --section-padding: 3rem 0;
   }
   
   /* Additional mobile optimizations */
