@@ -62,7 +62,7 @@ const Inicio = () => {
   const handleSocialMediaClick = (platform) => {
     const urls = {
       linkedin: 'https://www.linkedin.com/company/conviccion-leasing',
-      instagram: 'https://www.instagram.com/conviccionleasing'
+      instagram: 'https://www.instagram.com/conviccion_leasing'
     }
     window.open(urls[platform], '_blank')
   }
